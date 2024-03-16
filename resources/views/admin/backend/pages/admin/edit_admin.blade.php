@@ -37,7 +37,7 @@
 
 
                                         <input class="form-control @error('username') is-invalid @enderror"
-                                            type="text" name="username"
+                                            type="text" name="username" value="{{$user->username}}"
                                             placeholder="Enter Username">
                                     </div>
                                     @error('username')
@@ -51,7 +51,7 @@
 
 
                                         <input class="form-control @error('name') is-invalid @enderror"
-                                            type="text" name="name"
+                                            type="text" name="name" value="{{$user->name}}"
                                             placeholder="Enter Name">
                                     </div>
                                     @error('name')
@@ -67,7 +67,7 @@
 
 
                                         <input class="form-control @error('email') is-invalid @enderror"
-                                            type="text" name="email"
+                                            type="text" name="email" value="{{$user->email}}"
                                             placeholder="Enter Email">
                                     </div>
                                     @error('email')
@@ -80,13 +80,66 @@
 
 
                                         <input class="form-control @error('phone') is-invalid @enderror"
-                                            type="text" name="phone"
-                                            placeholder="Enter Phone Number">
+                                            type="text" name="phone" value="{{$user->phone}}"
+                                            value="{{$user->phone}}">
                                     </div>
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
+
+
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Status</label>
+                                    <div class="col-sm-12 col-md-10">
+
+
+                                        <input class="form-control @error('status') is-invalid @enderror"
+                                            type="text" name="status"
+                                            value="{{$user->status}}">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Role</label>
+                                    <div class="col-sm-12 col-md-10">
+
+
+                                        <input class="form-control @error('role') is-invalid @enderror"
+                                            type="text" name="role"
+                                            value="{{$user->role}}">
+                                    </div>
+
+                                </div>
+
+                                {{-- <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Role Name</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <select class="custom-select col-12">
+                                            <option selected="">Select Role</option>
+                                            @foreach($user as $role)
+                                            <option value="{{ $role->role }}" {{$user->role($role->role)? 'selected' : ''}}> {{ $role->role}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div> --}}
+
+                                {{-- <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Role Name</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <select class="custom-select col-12" name="role">
+                                            <option value="">Select Role</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role }}" {{ $user->role == $role ? 'selected' : ''}}> {{ $role }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div> --}}
+
 
 
 

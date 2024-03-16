@@ -148,7 +148,8 @@ class AdminController extends Controller
     public function EditAdmin($id){
 
         $user = User::findOrFail($id);
-        return view('admin.backend.pages.admin.edit_admin',compact('user'));
+        $roles = User::all(); // Assuming you have a Role model and a roles table
+        return view('admin.backend.pages.admin.edit_admin', compact('user', 'roles'));
 
 
     }
