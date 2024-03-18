@@ -14,9 +14,9 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">364364</div>
+                            <div class="weight-700 font-24 text-dark">0</div>
                             <div class="font-14 text-secondary weight-500">
-                                Appointment
+                                Arts
                             </div>
                         </div>
                         <div class="widget-icon">
@@ -31,9 +31,9 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">124,551</div>
+                            <div class="weight-700 font-24 text-dark">0</div>
                             <div class="font-14 text-secondary weight-500">
-                                Total Patient
+                                Total Arts
                             </div>
                         </div>
                         <div class="widget-icon">
@@ -48,9 +48,9 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">400+</div>
+                            <div class="weight-700 font-24 text-dark">0</div>
                             <div class="font-14 text-secondary weight-500">
-                                Total Doctor
+                                Total Artist
                             </div>
                         </div>
                         <div class="widget-icon">
@@ -68,7 +68,7 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">$50,000</div>
+                            <div class="weight-700 font-24 text-dark">$</div>
                             <div class="font-14 text-secondary weight-500">Earning</div>
                         </div>
                         <div class="widget-icon">
@@ -741,7 +741,19 @@
             </div>
         </div> --}}
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
         @include('admin.body.footer')
 
 
