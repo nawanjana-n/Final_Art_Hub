@@ -48,15 +48,18 @@
                                     <tr>
 
                                         <td>{{ $key + 1 }}</td>
+                                        
                                         <td class="table-plus">
                                             <div class="name-avatar d-flex align-items-center">
                                                 <div class="avatar mr-2 flex-shrink-0">
-                                                    @if (!empty($profileData->photo))
-                                                        <img src="{{ url('upload/admin_images/' . $profileData->photo) }}" alt="{{ $item->name }}"
-                                                            class="border-radius-100 shadow" width="50" height="50" style="object-fit: cover;" />
+                                                    @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
+                                                        <img src="{{ url('upload/admin_images/' . $item->photo) }}"
+                                                            alt="{{ $item->name }}" class="border-radius-100 shadow"
+                                                            width="50" height="50" style="object-fit: cover;" />
                                                     @else
-                                                        <img src="{{ url('upload/no_image.jpg') }}" alt="{{ $item->name }}"
-                                                            class="border-radius-100 shadow" width="50" height="50" style="object-fit: cover;"/>
+                                                        <img src="{{ url('upload/no_image.jpg') }}"
+                                                            alt="{{ $item->name }}" class="border-radius-100 shadow"
+                                                            width="50" height="50" style="object-fit: cover;" />
                                                     @endif
                                                 </div>
                                             </div>
@@ -75,8 +78,7 @@
 
 
                                         <td>
-                                            <a href="{{ route('edit.admin', $item->id) }}"
-                                                class="btn btn-warning ">Edit</a>
+                                            <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-warning ">Edit</a>
                                             <a href="{{ route('delete.category', $item->id) }}" class="btn btn-danger"
                                                 id="delete">Delete</a>
                                         </td>

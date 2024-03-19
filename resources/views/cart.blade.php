@@ -47,7 +47,7 @@
                                     <tr>
                                         <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
                                                     src="assets2/img/product-1.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a href="#">zz</a></td>
+                                        <td class="pro-title"><a href="#">Zeon Zen 4 Pro</a></td>
                                         <td class="pro-price"><span>$295.00</span></td>
                                         <td class="pro-quantity">
                                             <div class="pro-qty"><input type="text" value="1"></div>
