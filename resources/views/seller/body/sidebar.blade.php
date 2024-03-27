@@ -14,42 +14,39 @@
 
                 <li>
                     <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-diagram-3"></span><span class="mtext">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-diagram-3"></span><span class="mtext">Manage Art Works</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Art Work Analytics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Order Management</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Customer Interaction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-chat-right-dots"></span><span class="mtext"> Profile Management</span>
+                        <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Calendar</span>
+                <li class="dropdown">
+                    <a  class="dropdown-toggle">
+                        <span class="micon bi bi-hdd-stack"></span
+                        ><span class="mtext">Manage Users</span>
                     </a>
+                    <ul class="submenu">
+
+                        <li class="dropdown">
+                            <a  class="dropdown-toggle">
+                                <span class="micon fas fa-user-shield"></span
+                                ><span class="mtext">Sellers</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="{{route('all.admin')}}">All Sellers</a></li>
+                                <li><a href="{{route('add.admin')}}">Add Seller</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
                 </li>
 
+
+
+
+                <li>
+                    <a href="#" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-body-text"></span><span class="mtext">Content Management</span>
+                    </a>
+                </li>
 
 
 
@@ -57,4 +54,3 @@
         </div>
     </div>
 </div>
-

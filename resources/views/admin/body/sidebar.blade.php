@@ -36,6 +36,29 @@
                             </ul>
                         </li>
 
+                        <li class="dropdown">
+                            <a  class="dropdown-toggle">
+                                <span class="micon fas fa-user-shield"></span
+                                ><span class="mtext">Sellers</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="{{route('all.admin')}}">All Sellers</a></li>
+                                <li><a href="{{route('add.admin')}}">Add Seller</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a  class="dropdown-toggle">
+                                <span class="micon fas fa-user-shield"></span
+                                ><span class="mtext">Clients</span>
+                            </a>
+                            <ul class="submenu child">
+                                <li><a href="{{route('all.admin')}}">All Clients</a></li>
+                                <li><a href="{{route('add.admin')}}">Add Client</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </li>
 

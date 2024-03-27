@@ -1,6 +1,6 @@
-@extends('admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Admin Profile')
-@section('admin')
+@extends('client.client_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Client Profile')
+@section('client')
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>All Admins</h4>
+                                <h4>All Clients</h4>
                             </div>
 
                         </div>
@@ -22,7 +22,7 @@
                     <div class="pd-20">
                         <div class="row justify-content-end">
                             <div class="col-auto">
-                                <a href="{{ route('add.admin') }}" class="btn btn-info">Add Admin</a>
+                                <a href="{{ route('add.clients') }}" class="btn btn-info">Add Client</a>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($alladmin as $key => $item)
+                                @foreach ($allclient as $key => $item)
                                     <tr>
 
                                         <td>{{ $key + 1 }}</td>
@@ -52,8 +52,8 @@
                                         <td class="table-plus">
                                             <div class="name-avatar d-flex align-items-center">
                                                 <div class="avatar mr-2 flex-shrink-0">
-                                                    @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
-                                                        <img src="{{ url('upload/admin_images/' . $item->photo) }}"
+                                                    @if (!empty($item->photo) && file_exists(public_path('upload/client_images/' . $item->photo)))
+                                                        <img src="{{ url('upload/client_images/' . $item->photo) }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
                                                             width="50" height="50" style="object-fit: cover;" />
                                                     @else
@@ -69,6 +69,9 @@
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>
+
+
+
                                             @if ($item->status == 'active')
                                                 <span class="badge badge-success" style="font-size: 0.8rem;">Active</span>
                                             @else
@@ -78,7 +81,7 @@
 
 
                                         <td>
-                                            <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-warning ">Edit</a>
+                                            <a href="{{ route('edit.client', $item->id) }}" class="btn btn-warning ">Edit</a>
                                             <a href="{{ route('delete.category', $item->id) }}" class="btn btn-danger"
                                                 id="delete">Delete</a>
                                         </td>

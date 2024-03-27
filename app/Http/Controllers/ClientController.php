@@ -107,8 +107,45 @@ class ClientController extends Controller
         return back()->with($notification);
     }
 
+    public function AllClient()
+    {
+        // Implementation for AllSeller method goes here
+    }
 
+    public function AddClient()
+    {
+        return view('client.backend.pages.client.add_client');
+    }
 
+    public function StoreClient(Request $request)
+    {
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = Hash::make('ArtTradeHub');
+        $user->role = 'client';
+        $user->status = 'active';
+        $user->save();
 
+        $notification = array(
+            'message' => 'New Client Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.client')->with($notification);
+    }
+
+    public function EditClient($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::all(); // Assuming you have a Role model and a roles table
+        return view('client.backend.pages.client.edit_client', compact('user', 'roles'));
+    }
 }
+
+
+
+
 
