@@ -1,6 +1,6 @@
-@extends('client.client_dashboard')
+@extends('admin.admin_dashboard')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Client Profile')
-@section('client')
+@section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h4>Edit Client</h4>
+                                <h4>Add Client</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -37,7 +37,7 @@
 
 
                                         <input class="form-control @error('username') is-invalid @enderror"
-                                            type="text" name="username" value="{{$user->username}}"
+                                            type="text" name="username"
                                             placeholder="Enter Username">
                                     </div>
                                     @error('username')
@@ -46,12 +46,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Client  Name</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Client Name</label>
                                     <div class="col-sm-12 col-md-10">
 
 
                                         <input class="form-control @error('name') is-invalid @enderror"
-                                            type="text" name="name" value="{{$user->name}}"
+                                            type="text" name="name"
                                             placeholder="Enter Name">
                                     </div>
                                     @error('name')
@@ -62,12 +62,12 @@
 
 
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Client Email</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Admin Email</label>
                                     <div class="col-sm-12 col-md-10">
 
 
                                         <input class="form-control @error('email') is-invalid @enderror"
-                                            type="text" name="email" value="{{$user->email}}"
+                                            type="text" name="email"
                                             placeholder="Enter Email">
                                     </div>
                                     @error('email')
@@ -75,13 +75,13 @@
                                     @enderror
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Client Phone</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Admin Phone</label>
                                     <div class="col-sm-12 col-md-10">
 
 
                                         <input class="form-control @error('phone') is-invalid @enderror"
-                                            type="text" name="phone" value="{{$user->phone}}"
-                                            value="{{$user->phone}}">
+                                            type="text" name="phone"
+                                            placeholder="Enter Phone Number">
                                     </div>
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
@@ -89,55 +89,46 @@
                                 </div>
 
 
+                                {{-- <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Password</label>
+                                    <div class="col-sm-12 col-md-10">
 
 
-                                <div class="form-group row">
+                                        <input class="form-control @error('password') is-invalid @enderror"
+                                            type="text" name="password"
+                                            placeholder="Enter Password">
+                                    </div>
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div> --}}
+
+
+                                {{-- <div class="form-group row">
                                     <label class="col-sm-12 col-md-2 col-form-label">Status</label>
                                     <div class="col-sm-12 col-md-10">
 
 
                                         <input class="form-control @error('status') is-invalid @enderror"
                                             type="text" name="status"
-                                            value="{{$user->status}}">
+                                            placeholder="Status">
                                     </div>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Role</label>
-                                    <div class="col-sm-12 col-md-10">
-
-
-                                        <input class="form-control @error('role') is-invalid @enderror"
-                                            type="text" name="role"
-                                            value="{{$user->role}}">
-                                    </div>
-
-                                </div>
-
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Role Name</label>
-                                    <div class="col-sm-12 col-md-10">
-                                        <select class="custom-select col-12">
-                                            <option selected="">Select Role</option>
-                                            @foreach($user as $role)
-                                            <option value="{{ $role->role }}" {{$user->role($role->role)? 'selected' : ''}}> {{ $role->role}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
+                                    @error('status')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div> --}}
 
                                 {{-- <div class="form-group row">
                                     <label class="col-sm-12 col-md-2 col-form-label">Role Name</label>
                                     <div class="col-sm-12 col-md-10">
-                                        <select class="custom-select col-12" name="role">
-                                            <option value="">Select Role</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{ $role }}" {{ $user->role == $role ? 'selected' : ''}}> {{ $role }}</option>
-                                            @endforeach
+                                        <select class="custom-select col-12">
+                                            <option selected="">Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
                                         </select>
                                     </div>
+
                                 </div> --}}
 
 

@@ -112,17 +112,39 @@ class AdminController extends Controller
     }//End method
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //////////////Admin User All Method///////////
+
+
+
+
     public function AllAdmin()
     {
         $alladmin = User::where('role', 'admin')->get();
         return view('admin.backend.pages.admin.all_admin', compact('alladmin'));
-    }// End method
+    }
 
     public function AddAdmin()
     {
         return view('admin.backend.pages.admin.add_admin');
     }
+
     public function StoreAdmin(Request $request)
     {
         $user = new User();
@@ -130,33 +152,227 @@ class AdminController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->password =   Hash::make('ArtTradeHub');
+        $user->password = Hash::make('ArtTradeHub');
         $user->role = 'admin';
         $user->status = 'active';
         $user->save();
 
+        $notification = array(
+            'message' => 'New Admin Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.admin')->with($notification);
+    }
+
+    public function EditAdmin($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::distinct()->pluck('role'); // Assuming Role is your model for roles
+        $statuss = User::distinct()->pluck('status'); // Fetch unique status values from the users table
+        return view('admin.backend.pages.admin.edit_admin', compact('user', 'roles', 'statuss'));
+    }
+    public function UpdateAdmin(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = $request->role;
+        $user->status = $request->status;
+
+        $user->save();
+
+
 
         $notification = array(
-            'message' => 'New Admin User Inserted Successfully',
+            'message' => 'Admin Details Updated',
             'alert-type' => 'success'
         );
 
         return redirect()->route('all.admin')->with($notification);
 
-    } //End Method
+    }
 
-    public function EditAdmin($id){
+    public function DeleteAdmin($id)
+    {
 
         $user = User::findOrFail($id);
-        $roles = User::all(); // Assuming you have a Role model and a roles table
-        return view('admin.backend.pages.admin.edit_admin', compact('user', 'roles'));
+        $user->delete();
 
+        $notification = array(
+            'message' => 'Admin Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function AllSeller()
+    {
+        $allseller = User::where('role', 'seller')->get();
+        return view('admin.backend.pages.seller.all_seller', compact('allseller'));
+    }
+
+    public function AddSeller()
+    {
+        return view('admin.backend.pages.seller.add_seller');
+    }
+
+    public function StoreSeller(Request $request)
+    {
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = Hash::make('ArtTradeHub');
+        $user->role = 'seller';
+        $user->status = 'active';
+        $user->save();
+
+        $notification = array(
+            'message' => 'New Seller Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.seller')->with($notification);
+    }
+
+    public function EditSeller($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::distinct()->pluck('role'); // Assuming Role is your model for roles
+        $statuss = User::distinct()->pluck('status'); // Fetch unique status values from the users table
+        return view('admin.backend.pages.seller.edit_seller', compact('user', 'roles', 'statuss'));
+    }
+    public function UpdateSeller(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = $request->role;
+        $user->status = $request->status;
+
+        $user->save();
+
+
+
+        $notification = array(
+            'message' => 'Seller Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.seller')->with($notification);
 
     }
 
+    public function DeleteSeller($id)
+    {
+
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'Seller Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+    public function AllClient()
+    {
+        $allclient = User::where('role', 'client')->get();
+        return view('admin.backend.pages.client.all_client', compact('allclient'));
+    }
+
+    public function AddClient()
+    {
+        return view('admin.backend.pages.client.add_client');
+    }
+
+    public function StoreClient(Request $request)
+    {
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = Hash::make('ArtTradeHub');
+        $user->role = 'client';
+        $user->status = 'active';
+        $user->save();
+
+        $notification = array(
+            'message' => 'New Client Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.client')->with($notification);
+    }
+
+    public function EditClient($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::distinct()->pluck('role'); // Assuming Role is your model for roles
+        $statuss = User::distinct()->pluck('status'); // Fetch unique status values from the users table
+        return view('admin.backend.pages.client.edit_client', compact('user', 'roles', 'statuss'));
+    }
+    public function UpdateClient(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = $request->role;
+        $user->status = $request->status;
+
+        $user->save();
+
+
+
+        $notification = array(
+            'message' => 'Seller Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.client')->with($notification);
+
+    }
+
+    public function DeleteClient($id)
+    {
+
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'Client Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+
+
 }
-
-
-
-
-

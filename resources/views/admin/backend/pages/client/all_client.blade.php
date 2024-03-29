@@ -1,6 +1,6 @@
-@extends('client.client_dashboard')
+@extends('admin.admin_dashboard')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Client Profile')
-@section('client')
+@section('admin')
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -22,7 +22,7 @@
                     <div class="pd-20">
                         <div class="row justify-content-end">
                             <div class="col-auto">
-                                <a href="{{ route('add.clients') }}" class="btn btn-info">Add Client</a>
+                                <a href="{{ route('add.client') }}" class="btn btn-info">Add Client</a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                                     @if (!empty($item->photo) && file_exists(public_path('upload/client_images/' . $item->photo)))
                                                         <img src="{{ url('upload/client_images/' . $item->photo) }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
-                                                            width="50" height="50" style="object-fit: cover;" />
+                                                             style="object-fit: cover;width: 50px; height: 50px;" />
                                                     @else
                                                         <img src="{{ url('upload/no_image.jpg') }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
@@ -81,9 +81,10 @@
 
 
                                         <td>
-                                            <a href="{{ route('edit.client', $item->id) }}" class="btn btn-warning ">Edit</a>
-                                            <a href="{{ route('delete.category', $item->id) }}" class="btn btn-danger"
-                                                id="delete">Delete</a>
+                                            <a href="{{ route('edit.client', $item->id) }}"
+                                                class="btn btn-warning ">Edit</a>
+                                            <a href="{{ route('delete.client', $item->id) }}" class="btn btn-danger"
+                                                id="delete" >Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

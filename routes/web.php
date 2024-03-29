@@ -48,16 +48,38 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 //Admin User All Route
-Route::controller(AdminController::class)->group(function(){
+Route::controller(AdminController::class)->group(function () {
 
-Route::get('/all/admin', 'AllAdmin')->name('all.admin');
-Route::get('/add/admin', 'AddAdmin')->name('add.admin');
-Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
-Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+    Route::get('/all/admin', 'AllAdmin')->name('all.admin');
+    Route::get('/add/admin', 'AddAdmin')->name('add.admin');
+    Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
+    Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+    Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
+    Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
 });
 
 
+//Admin client All show
+Route::controller(AdminController::class)->group(function () {
 
+    Route::get('/all/client', 'AllClient')->name('all.client');
+    Route::get('/add/client', 'AddClient')->name('add.client');
+    Route::post('/store/client', 'StoreClient')->name('store.client');
+    Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
+    Route::post('/update/client/{id}', 'UpdateClient')->name('update.client');
+    Route::get('/delete/client/{id}', 'DeleteClient')->name('delete.client');
+});
+
+
+Route::controller(AdminController::class)->group(function () {
+
+    Route::get('/all/seller', 'AllSeller')->name('all.seller');
+    Route::get('/add/seller', 'AddSeller')->name('add.seller');
+    Route::post('/store/seller', 'StoreSeller')->name('store.seller');
+    Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
+    Route::post('/update/seller/{id}', 'UpdateSeller')->name('update.seller');
+    Route::get('/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
+});
 
 
 //End Group Admin Middleware
@@ -74,13 +96,13 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
 //End Group Seller Middleware
 
 //Seller User All Route
-Route::controller(sellerController::class)->group(function(){
+// Route::controller(AdminController::class)->group(function () {
 
-    Route::get('/all/seller', 'AllSeller')->name('all.seller');
-    Route::get('/add/seller', 'AddSeller')->name('add.seller');
-    Route::post('/store/seller', 'StoreSeller')->name('store.seller');
-    Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
-    });
+//     Route::get('/all/seller', 'AllSeller')->name('all.seller');
+//     Route::get('/add/seller', 'AddSeller')->name('add.seller');
+//     Route::post('/store/seller', 'StoreSeller')->name('store.seller');
+//     Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
+// });
 
 
 
@@ -103,24 +125,25 @@ Route::middleware(['auth', 'role:client'])->group(function () {
     Route::post('/client/update/password', [ClientController::class, 'ClientUpdatePassword'])->name('client.update.password');
     Route::view('/checkout', 'checkout')->name('checkout');
     Route::view('/cart', 'cart')->name('cart');
+
+    //End Group Client Middleware
+
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/all/client', 'AllClient')->name('all.client');
+        Route::get('/add/client', 'AddClient')->name('add.client');
+        Route::post('/store/client', 'StoreClient')->name('store.client');
+        Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
+    });
 });
-//End Group Client Middleware
-
-Route::controller(ClientController::class)->group(function(){
-
-    Route::get('/all/client', 'AllClient')->name('all.client');
-    Route::get('/add/client', 'AddClient')->name('add.client');
-    Route::post('/store/client', 'StoreClient')->name('store.client');
-    Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
-    });
 //Admin User All Route
-Route::controller(ClientController::class)->group(function(){
+// Route::controller(AdminController::class)->group(function () {
 
-    Route::get('/all/client', 'AllClient')->name('all.client');
-    Route::get('/add/client', 'AddClient')->name('add.client');
-    Route::post('/store/client', 'StoreClient')->name('store.client');
-    Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
-    });
+//     Route::get('/all/client', 'AllClient')->name('all.client');
+//     Route::get('/add/client', 'AddClient')->name('add.client');
+//     Route::post('/store/client', 'StoreClient')->name('store.client');
+//     Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
+// });
 
 
 
@@ -139,34 +162,34 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 });
-Route::middleware(['auth', 'role:seller'])->group(function () {
+// Route::middleware(['auth', 'role:seller'])->group(function () {
 
-    Route::controller(CategoryTypeController::class)->group(function () {
-        Route::get('/all/category', 'AllCategory')->name('all.category');
-        Route::get('/add/category', 'AddCategory')->name('add.category');
-        Route::post('/store/category', 'StoreCategory')->name('store.category');
-        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
-        Route::post('/update/category', 'UpdateCategory')->name('update.category');
-        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
-
-
-    });
-});
+//     Route::controller(CategoryTypeController::class)->group(function () {
+//         Route::get('/all/category', 'AllCategory')->name('all.category');
+//         Route::get('/add/category', 'AddCategory')->name('add.category');
+//         Route::post('/store/category', 'StoreCategory')->name('store.category');
+//         Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+//         Route::post('/update/category', 'UpdateCategory')->name('update.category');
+//         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
 
 
-Route::middleware(['auth', 'role:client'])->group(function () {
-
-    Route::controller(CategoryTypeController::class)->group(function () {
-        Route::get('/all/category', 'AllCategory')->name('all.category');
-        Route::get('/add/category', 'AddCategory')->name('add.category');
-        Route::post('/store/category', 'StoreCategory')->name('store.category');
-        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
-        Route::post('/update/category', 'UpdateCategory')->name('update.category');
-        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+//     });
+// });
 
 
-    });
-});
+// Route::middleware(['auth', 'role:client'])->group(function () {
+
+//     Route::controller(CategoryTypeController::class)->group(function () {
+//         Route::get('/all/category', 'AllCategory')->name('all.category');
+//         Route::get('/add/category', 'AddCategory')->name('add.category');
+//         Route::post('/store/category', 'StoreCategory')->name('store.category');
+//         Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+//         Route::post('/update/category', 'UpdateCategory')->name('update.category');
+//         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+
+
+//     });
+// });
 
 
 

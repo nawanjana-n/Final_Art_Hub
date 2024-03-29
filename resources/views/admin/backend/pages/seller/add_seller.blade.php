@@ -1,6 +1,6 @@
-@extends('client.client_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Client Profile')
-@section('client')
+@extends('admin.admin_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Seller Profile')
+@section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h4>Add Client</h4>
+                                <h4>Add Seller</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -32,7 +32,7 @@
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Admin Username</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Seller Username</label>
                                     <div class="col-sm-12 col-md-10">
 
 
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Client Name</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Seller Name</label>
                                     <div class="col-sm-12 col-md-10">
 
 
@@ -62,7 +62,7 @@
 
 
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Admin Email</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Seller Email</label>
                                     <div class="col-sm-12 col-md-10">
 
 
@@ -75,7 +75,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Admin Phone</label>
+                                    <label class="col-sm-12 col-md-2 col-form-label">Seller Phone</label>
                                     <div class="col-sm-12 col-md-10">
 
 

@@ -42,8 +42,8 @@
                                 ><span class="mtext">Sellers</span>
                             </a>
                             <ul class="submenu child">
-                                <li><a href="{{route('all.admin')}}">All Sellers</a></li>
-                                <li><a href="{{route('add.admin')}}">Add Seller</a></li>
+                                <li><a href="{{route('all.seller')}}">All Sellers</a></li>
+                                <li><a href="{{route('add.seller')}}">Add Seller</a></li>
                             </ul>
                         </li>
 
@@ -54,8 +54,8 @@
                                 ><span class="mtext">Clients</span>
                             </a>
                             <ul class="submenu child">
-                                <li><a href="{{route('all.admin')}}">All Clients</a></li>
-                                <li><a href="{{route('add.admin')}}">Add Client</a></li>
+                                <li><a href="{{route('all.client')}}">All Clients</a></li>
+                                <li><a href="{{route('add.client')}}">Add Client</a></li>
                             </ul>
                         </li>
 

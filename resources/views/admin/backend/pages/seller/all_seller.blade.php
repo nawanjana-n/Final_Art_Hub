@@ -1,5 +1,5 @@
 @extends('admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Admin Profile')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Seller Profile')
 @section('admin')
 
     <div class="main-container">
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>All Admins</h4>
+                                <h4>All Sellers</h4>
                             </div>
 
                         </div>
@@ -22,7 +22,7 @@
                     <div class="pd-20">
                         <div class="row justify-content-end">
                             <div class="col-auto">
-                                <a href="{{ route('add.admin') }}" class="btn btn-info">Add Admin</a>
+                                <a href="{{ route('add.seller') }}" class="btn btn-info">Add Seller</a>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($alladmin as $key => $item)
+                                @foreach ($allseller as $key => $item)
                                     <tr>
 
                                         <td>{{ $key + 1 }}</td>
@@ -52,10 +52,10 @@
                                         <td class="table-plus">
                                             <div class="name-avatar d-flex align-items-center">
                                                 <div class="avatar mr-2 flex-shrink-0">
-                                                    @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
-                                                        <img src="{{ url('upload/admin_images/' . $item->photo) }}"
+                                                    @if (!empty($item->photo) && file_exists(public_path('upload/seller_images/' . $item->photo)))
+                                                        <img src="{{ url('upload/seller_images/' . $item->photo) }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
-                                                            width="50" height="50" style="object-fit: cover;" />
+                                                             style="object-fit: cover;width: 50px; height: 50px;" />
                                                     @else
                                                         <img src="{{ url('upload/no_image.jpg') }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
@@ -69,6 +69,9 @@
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>
+
+
+
                                             @if ($item->status == 'active')
                                                 <span class="badge badge-success" style="font-size: 0.8rem;">Active</span>
                                             @else
@@ -78,9 +81,10 @@
 
 
                                         <td>
-                                            <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-warning ">Edit</a>
-                                            <a href="{{ route('delete.admin', $item->id) }}" class="btn btn-danger"
-                                                id="delete">Delete</a>
+                                            <a href="{{ route('edit.seller', $item->id) }}"
+                                                class="btn btn-warning ">Edit</a>
+                                            <a href="{{ route('delete.seller', $item->id) }}" class="btn btn-danger"
+                                                id="delete" >Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
