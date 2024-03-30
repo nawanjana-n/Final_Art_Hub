@@ -11,8 +11,8 @@
 
 
                     @php
-                    $id = Auth::user()->id;
-                    $profileData = App\Models\User::find($id);
+                        $id = Auth::user()->id;
+                        $profileData = App\Models\User::find($id);
                     @endphp
 
 
@@ -21,7 +21,7 @@
 
                     <span class="user-icon">
                         <img src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
-                            alt="" />
+                            alt="" style="width: 50px; height: 50px;object-fit: cover;" />
                     </span>
                     <span class="user-name">{{ Auth::user()->name }}</span>
                 </a>
@@ -32,10 +32,11 @@
 
 
                     <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="dw dw-user1"></i> Profile</a>
-                    <a class="dropdown-item" href="{{ route('admin.change.password') }}"><i class="bi bi-pencil-square"></i>
+                    <a class="dropdown-item" href="{{ route('admin.change.password') }}"><i
+                            class="bi bi-pencil-square"></i>
                         Change Password</ a>
-                    <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                    <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="dw dw-logout"></i> Log Out</a>
+                        <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="dw dw-logout"></i> Log
+                            Out</a>
                 </div>
             </div>
         </div>

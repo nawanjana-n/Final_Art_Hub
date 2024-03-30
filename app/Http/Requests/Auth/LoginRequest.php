@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
 
 class LoginRequest extends FormRequest
 {
@@ -52,6 +52,13 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'login' => trans('auth.failed'),
+            ]);
+        }
+
+        // Check if the user is deactivated
+        if ($user->status == 'inactive') {
+            throw ValidationException::withMessages([
+                'login' => trans('Your Account Suspended! Please Contact Admin.'), // Make sure to add a corresponding message in your language files
             ]);
         }
 

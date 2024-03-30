@@ -55,11 +55,11 @@
                                                     @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
                                                         <img src="{{ url('upload/admin_images/' . $item->photo) }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
-                                                            width="50" height="50" style="object-fit: cover;" />
+                                                            style="object-fit: cover;width: 50px; height: 50px;"/>
                                                     @else
                                                         <img src="{{ url('upload/no_image.jpg') }}"
                                                             alt="{{ $item->name }}" class="border-radius-100 shadow"
-                                                            width="50" height="50" style="object-fit: cover;" />
+                                                            style="object-fit: cover;width: 50px; height: 50px;" />
                                                     @endif
                                                 </div>
                                             </div>

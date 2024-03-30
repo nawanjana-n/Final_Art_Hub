@@ -13,31 +13,12 @@
             <ul id="accordion-menu">
 
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{route('seller.dashboard')}}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                 </li>
 
-                <li class="dropdown">
-                    <a  class="dropdown-toggle">
-                        <span class="micon bi bi-hdd-stack"></span
-                        ><span class="mtext">Manage Users</span>
-                    </a>
-                    <ul class="submenu">
-
-                        <li class="dropdown">
-                            <a  class="dropdown-toggle">
-                                <span class="micon fas fa-user-shield"></span
-                                ><span class="mtext">Sellers</span>
-                            </a>
-                            <ul class="submenu child">
-                                <li><a href="{{route('all.admin')}}">All Sellers</a></li>
-                                <li><a href="{{route('add.admin')}}">Add Seller</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </li>
+               
 
 
 

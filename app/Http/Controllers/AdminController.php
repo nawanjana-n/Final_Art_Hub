@@ -13,7 +13,24 @@ class AdminController extends Controller
     public function AdminDashboard()
     {
 
-        return view('admin.index');
+        $fakeTotalcustomers = 0;
+        $realTotaladmins = User::where('role', 'admin')->where('status', 'active')->count();
+        $totaladmins = $fakeTotalcustomers + $realTotaladmins;
+        $formattedTotaladmins = number_format($totaladmins);
+
+
+        $fakeTotalSellers = 0;// Fake number
+        $realTotalSellers = User::where('role', 'seller')->where('status', 'active')->count();// Real count of sellers
+        $totalsellers = $fakeTotalSellers + $realTotalSellers;// Combine fake number and real count
+        $formattedTotalSellers = number_format($totalsellers); // Format the total sellers number with commas for thousands separators
+
+        $fakeTotalcustomers = 0;
+        $realTotalcustomers = User::where('role', 'client')->where('status', 'active')->count();
+        // User::where('role', 'customer')->count();
+        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
+        $formattedTotalcustomers = number_format($totalcustomers);
+
+        return view('admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers'));
     } //End Method
 
     public function AdminLogout(Request $request)
@@ -147,6 +164,24 @@ class AdminController extends Controller
 
     public function StoreAdmin(Request $request)
     {
+
+        $request->validate([
+            'username' => 'required|string|unique:users',
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required|string|min:9|unique:users',
+        ], [
+            'username.required' => 'Username is required.',
+            'username.unique' => 'Username is already taken.',
+            'name.required' => 'Name is required.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Invalid email format.',
+            'email.unique' => 'Email is already taken.',
+            'phone.required' => 'Phone number is required.',
+            'phone.min' => 'Phone number must be at least 9 characters.',
+            'phone.unique' => 'Phone number is already taken.',
+        ]);
+
         $user = new User();
         $user->username = $request->username;
         $user->name = $request->name;
@@ -174,6 +209,24 @@ class AdminController extends Controller
     }
     public function UpdateAdmin(Request $request, $id)
     {
+        // Validate the request data
+    $request->validate([
+        'username' => 'required|string|unique:users,username,' . $id,
+        'name' => 'required|string',
+        'email' => 'required|email|unique:users,email,' . $id,
+        'phone' => 'required|string|min:9|unique:users,phone,' . $id,
+    ], [
+        'username.required' => 'Username is required.',
+        'username.unique' => 'Username is already taken.',
+        'name.required' => 'Name is required.',
+        'email.required' => 'Email is required.',
+        'email.email' => 'Invalid email format.',
+        'email.unique' => 'Email is already taken.',
+        'phone.required' => 'Phone number is required.',
+        'phone.min' => 'Phone number must be at least 9 characters.',
+        'phone.unique' => 'Phone number is already taken.',
+    ]);
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
@@ -237,6 +290,24 @@ class AdminController extends Controller
 
     public function StoreSeller(Request $request)
     {
+
+        $request->validate([
+            'username' => 'required|string|unique:users',
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required|string|min:9|unique:users',
+        ], [
+            'username.required' => 'Username is required.',
+            'username.unique' => 'Username is already taken.',
+            'name.required' => 'Name is required.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Invalid email format.',
+            'email.unique' => 'Email is already taken.',
+            'phone.required' => 'Phone number is required.',
+            'phone.min' => 'Phone number must be at least 9 characters.',
+            'phone.unique' => 'Phone number is already taken.',
+        ]);
+
         $user = new User();
         $user->username = $request->username;
         $user->name = $request->name;
@@ -264,6 +335,26 @@ class AdminController extends Controller
     }
     public function UpdateSeller(Request $request, $id)
     {
+
+        // Validate the request data
+    $request->validate([
+        'username' => 'required|string|unique:users,username,' . $id,
+        'name' => 'required|string',
+        'email' => 'required|email|unique:users,email,' . $id,
+        'phone' => 'required|string|min:9|unique:users,phone,' . $id,
+    ], [
+        'username.required' => 'Username is required.',
+        'username.unique' => 'Username is already taken.',
+        'name.required' => 'Name is required.',
+        'email.required' => 'Email is required.',
+        'email.email' => 'Invalid email format.',
+        'email.unique' => 'Email is already taken.',
+        'phone.required' => 'Phone number is required.',
+        'phone.min' => 'Phone number must be at least 9 characters.',
+        'phone.unique' => 'Phone number is already taken.',
+    ]);
+
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
@@ -311,6 +402,24 @@ class AdminController extends Controller
 
     public function StoreClient(Request $request)
     {
+
+        $request->validate([
+            'username' => 'required|string|unique:users',
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required|string|min:9|unique:users',
+        ], [
+            'username.required' => 'Username is required.',
+            'username.unique' => 'Username is already taken.',
+            'name.required' => 'Name is required.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Invalid email format.',
+            'email.unique' => 'Email is already taken.',
+            'phone.required' => 'Phone number is required.',
+            'phone.min' => 'Phone number must be at least 9 characters.',
+            'phone.unique' => 'Phone number is already taken.',
+        ]);
+
         $user = new User();
         $user->username = $request->username;
         $user->name = $request->name;
@@ -338,6 +447,24 @@ class AdminController extends Controller
     }
     public function UpdateClient(Request $request, $id)
     {
+        // Validate the request data
+    $request->validate([
+        'username' => 'required|string|unique:users,username,' . $id,
+        'name' => 'required|string',
+        'email' => 'required|email|unique:users,email,' . $id,
+        'phone' => 'required|string|min:9|unique:users,phone,' . $id,
+    ], [
+        'username.required' => 'Username is required.',
+        'username.unique' => 'Username is already taken.',
+        'name.required' => 'Name is required.',
+        'email.required' => 'Email is required.',
+        'email.email' => 'Invalid email format.',
+        'email.unique' => 'Email is already taken.',
+        'phone.required' => 'Phone number is required.',
+        'phone.min' => 'Phone number must be at least 9 characters.',
+        'phone.unique' => 'Phone number is already taken.',
+    ]);
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;

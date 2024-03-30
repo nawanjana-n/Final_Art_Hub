@@ -13,7 +13,7 @@
             <ul id="accordion-menu">
 
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{route('admin.dashboard')}}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                 </li>
@@ -65,9 +65,15 @@
 
 
 
-                <li>
+                {{-- <li>
                     <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-body-text"></span><span class="mtext">Content Management</span>
+                    </a>
+                </li> --}}
+
+                <li>
+                    <a href="{{route('all.category')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-list-alt"></span><span class="mtext">Category</span>
                     </a>
                 </li>
 

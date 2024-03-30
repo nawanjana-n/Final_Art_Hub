@@ -42,7 +42,7 @@
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="single-input-item">
-                                        <x-input-error :messages="$errors->get('login')" class="mt-2 text-danger" />
+                                        <x-input-error :messages="$errors->get('login')" class="mt-2 text-danger " />
                                         <input id="login" name="login" :value="old('login')" required autofocus
                                         autocomplete="username" type="text"
                                         placeholder="Username / Phone / Email"/>

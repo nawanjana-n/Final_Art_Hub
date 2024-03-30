@@ -13,7 +13,7 @@
                     <ul id="accordion-menu">
 
                         <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
+                            <a href="{{route('client.dashboard')}}" class="dropdown-toggle no-arrow">
                                 <span class="micon bi bi-diagram-3"></span><span class="mtext">Home</span>
                             </a>
                         </li>

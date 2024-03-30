@@ -14,7 +14,7 @@
                     <div class="card-box height-100-p widget-style3">
                         <div class="d-flex flex-wrap">
                             <div class="widget-data">
-                                <div class="weight-700 font-24 text-dark">0</div>
+                                <div class="weight-700 font-24 text-dark">122</div>
                                 <div class="font-14 text-secondary weight-500">
                                     Arts
                                 </div>
@@ -31,9 +31,9 @@
                     <div class="card-box height-100-p widget-style3">
                         <div class="d-flex flex-wrap">
                             <div class="widget-data">
-                                <div class="weight-700 font-24 text-dark">0</div>
+                                <div class="weight-700 font-24 text-dark">{{ $formattedTotalcustomers}}</div>
                                 <div class="font-14 text-secondary weight-500">
-                                    Total Arts
+                                    All Clients
                                 </div>
                             </div>
                             <div class="widget-icon">
@@ -48,9 +48,9 @@
                     <div class="card-box height-100-p widget-style3">
                         <div class="d-flex flex-wrap">
                             <div class="widget-data">
-                                <div class="weight-700 font-24 text-dark">0</div>
+                                <div class="weight-700 font-24 text-dark">{{ $formattedTotalSellers}}</div>
                                 <div class="font-14 text-secondary weight-500">
-                                    Total Artist
+                                    All Sellers
                                 </div>
                             </div>
                             <div class="widget-icon">
@@ -65,8 +65,8 @@
                     <div class="card-box height-100-p widget-style3">
                         <div class="d-flex flex-wrap">
                             <div class="widget-data">
-                                <div class="weight-700 font-24 text-dark">$</div>
-                                <div class="font-14 text-secondary weight-500">Earning</div>
+                                <div class="weight-700 font-24 text-dark">{{ $formattedTotaladmins}}</div>
+                                <div class="font-14 text-secondary weight-500">All Admins</div>
                             </div>
                             <div class="widget-icon">
                                 <div class="icon" data-color="#09cc06">

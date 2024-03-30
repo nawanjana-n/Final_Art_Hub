@@ -28,7 +28,7 @@
                             <div class="profile-photo">
 
                                 <img src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
-                                    alt="" class="avatar-photo" />
+                                    alt="" class="avatar-photo"  style="object-fit: cover;width: 160px; height: 160px;"/>
 
                             </div>
                             <h5 class="text-center h5 mb-0">{{ $profileData->name }}</h5>

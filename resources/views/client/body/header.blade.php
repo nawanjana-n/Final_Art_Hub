@@ -15,13 +15,13 @@
                     @endphp
                     <span class="user-icon">
                         <img src="{{ !empty($profileData->photo) ? url('upload/client_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
-                            alt="" class="avatar-photo" />
+                            alt="" class="avatar-photo" style="width: 50px; height: 50px;object-fit: cover;"/>
                     </span>
 
                     <span class="user-name">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    
+
 
 
 

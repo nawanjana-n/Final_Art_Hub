@@ -22,9 +22,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row col-12">
+                <div class="row col-lg-12">
 
-                    <div class="col-8">
+                    <div class="col-lg-12">
                         <div class="pd-20 card-box ">
 
                             <form method="POST" action="{{ route('update.category') }}">

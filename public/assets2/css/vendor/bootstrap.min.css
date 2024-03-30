@@ -514,6 +514,12 @@ mark {
     height: auto;
 }
 
+.img-fluidd {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .img-fluid2 {
     max-width: 40%;
     height: auto;

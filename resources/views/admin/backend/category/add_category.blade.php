@@ -22,12 +22,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row col-12">
+                <div class="row col-lg-12">
 
-                    <div class="col-8">
+                    <div class="col-lg-12">
                         <div class="pd-20 card-box ">
 
-                            <form method="POST" action="{{ route('store.category') }}">
+                            <form method="POST" action="{{ route('store.category') }}" enctype="multipart/form-data">
 
                                 @csrf
 
@@ -38,11 +38,33 @@
 
                                         <input class="form-control @error('category_name') is-invalid @enderror"
                                             type="text" name="category_name"
-                                            placeholder="Enter Category Name">
+                                            placeholder="Enter Category Name" required>
                                     </div>
                                     @error('category_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Photo</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <div class="form-group">
+
+                                            <input type="file" class="form-control-file form-control height-auto"
+                                                id = "image" name="photo" required/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label"></label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <div class="form-group">
+                                            <img id="showImage"
+                                                src="{{ !empty($profileData->photo) ? url('upload/category_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
+                                                alt="" class="avatar-photo" style="width: 100px; height: auto;" />
+                                        </div>
+                                    </div>
                                 </div>
 
 

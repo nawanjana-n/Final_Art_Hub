@@ -27,7 +27,7 @@
                     <div class="col-lg-12">
                         <div class="pd-20 card-box ">
 
-                            <form method="POST" action="{{ route('store.client') }}">
+                            <form method="POST" action="{{ route('store.seller') }}">
 
                                 @csrf
 
@@ -38,7 +38,7 @@
 
                                         <input class="form-control @error('username') is-invalid @enderror"
                                             type="text" name="username"
-                                            placeholder="Enter Username">
+                                            placeholder="Enter Username" >
                                     </div>
                                     @error('username')
                                         <span class="text-danger">{{ $message }}</span>
@@ -52,7 +52,7 @@
 
                                         <input class="form-control @error('name') is-invalid @enderror"
                                             type="text" name="name"
-                                            placeholder="Enter Name">
+                                            placeholder="Enter Name" >
                                     </div>
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
@@ -68,7 +68,7 @@
 
                                         <input class="form-control @error('email') is-invalid @enderror"
                                             type="text" name="email"
-                                            placeholder="Enter Email">
+                                            placeholder="Enter Email" >
                                     </div>
                                     @error('email')
                                         <span class="text-danger">{{ $message }}</span>
@@ -81,7 +81,7 @@
 
                                         <input class="form-control @error('phone') is-invalid @enderror"
                                             type="text" name="phone"
-                                            placeholder="Enter Phone Number">
+                                            placeholder="Enter Phone Number" >
                                     </div>
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>

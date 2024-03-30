@@ -9,76 +9,118 @@ use App\Models\CategoryType;
 
 class CategoryTypeController extends Controller
 {
-    public function AllCategory(){
+    public function AllCategory()
+    {
         $types = CategoryType::latest()->get();
-        return view ('admin.backend.category.all_category',compact('types'));
+        return view('admin.backend.category.all_category', compact('types'));
     } // End Method
 
-public function AddCategory(){
-return view ('admin.backend.category.add_category');
-} // End Method
+    public function AddCategory()
+    {
+        return view('admin.backend.category.add_category');
+    } // End Method
 
-public function StoreCategory(Request $request){
-    $request->validate([
-        'category_name' => 'required',
+    public function index()
+    {
+        $categories = CategoryType::all();
+        return view('welcome', compact('categories'));
+    }
 
-
-    ]);
-    CategoryType::insert([
-'category_name'=> $request->category_name,
-
-
-
-
-    ]);
-
-    $notification = array(
-        'message' => 'Category Added Successfully',
-        'alert-type' => 'success'
-    );
-
-    return redirect()->route('all.category')->with($notification);
-
-} //End Method
+    public function StoreCategory(Request $request)
+    {
+        // $request->validate([
+        //     'category_name' => 'required',
 
 
-public function EditCategory($id){
-$categories =CategoryType::findOrFail($id);
-return view('admin.backend.category.edit_category',compact('categories'));
+        // ]);
+        // CategoryType::insert([
+        //     'category_name' => $request->category_name,
+        // ]);
 
-} // End Method
+        // $notification = array(
+        //     'message' => 'Category Added Successfully',
+        //     'alert-type' => 'success'
+        // );
 
-public function UpdateCategory(Request $request){
-   $cid = $request->id;
-    CategoryType::findOrFail($cid)->update([
+        // return redirect()->route('all.category')->with($notification);
 
-'category_name'=> $request->category_name,
-
+        $category = new CategoryType;
+        $category->category_name = trim($request->category_name);
 
 
+        if ($request->file('photo')) {
+            $file = $request->file('photo');
+            $filename = date('Ymdh') . $file->getClientOriginalName();
+            $file->move(public_path('upload/category_images'), $filename);
+            $category['photo'] = $filename;
+        }
 
-    ]);
 
-    $notification = array(
-        'message' => 'Category Updated Successfully',
-        'alert-type' => 'success'
-    );
 
-    return redirect()->route('all.category')->with($notification);
 
-} //End Method
+        $category->save();
 
-public function DeleteCategory($id){
-CategoryType::findOrFail($id)->delete();
+        $notification = array(
+            'message' => 'Category Created Succssfully',
+            'alert-type' => 'success'
+        );
 
-$notification = array(
-    'message' => 'Category Deleted Successfully',
-    'alert-type' => 'success'
-);
+        return redirect()->route('all.category')->with($notification);
 
-return redirect()->back()->with($notification);
+    } //End Method
 
-} //End Method
+
+    public function EditCategory($id)
+    {
+        $categories = CategoryType::findOrFail($id);
+        return view('admin.backend.category.edit_category', compact('categories'));
+
+    } // End Method
+
+    public function UpdateCategory(Request $request)
+    {
+        $cid = $request->id;
+        CategoryType::findOrFail($cid)->update([
+
+            'category_name' => $request->category_name,
+
+
+
+
+        ]);
+
+        $notification = array(
+            'message' => 'Category Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.category')->with($notification);
+
+    } //End Method
+
+
+    public function DeleteCategory($id)
+    {
+        $category = CategoryType::findOrFail($id);
+        if ($category->photo) {
+            // Determine the file path
+            $imagePath = public_path('upload/category_images/' . $category->photo);
+
+            // Check if the file exists before attempting to delete it
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+        $category->delete();
+
+        $notification = array(
+            'message' => 'Category Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } //End Method
 
 
 }

@@ -14,7 +14,7 @@
                     @endphp
                     <span class="user-icon">
                         <img src="{{ !empty($profileData->photo) ? url('upload/seller_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
-                            alt="" />
+                            alt="" style="width: 50px; height: 50px;object-fit: cover;"/>
                     </span>
                     <span class="user-name">{{ Auth::user()->name }}</span>
                 </a>
@@ -25,7 +25,7 @@
                     <a class="dropdown-item" href="{{ route('seller.profile') }}"><i class="dw dw-user1"></i>
                         Profile</a>
                     <a class="dropdown-item" href="{{ route('seller.change.password') }}"><i class="bi bi-pencil-square"></i> Change Password</a>
-                    <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
+                    
                     <a class="dropdown-item" href="{{ route('seller.logout') }}"><i class="dw dw-logout"></i> Log
                         Out</a>
                 </div>
