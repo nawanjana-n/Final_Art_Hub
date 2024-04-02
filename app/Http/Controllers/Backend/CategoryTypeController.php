@@ -28,21 +28,7 @@ class CategoryTypeController extends Controller
 
     public function StoreCategory(Request $request)
     {
-        // $request->validate([
-        //     'category_name' => 'required',
 
-
-        // ]);
-        // CategoryType::insert([
-        //     'category_name' => $request->category_name,
-        // ]);
-
-        // $notification = array(
-        //     'message' => 'Category Added Successfully',
-        //     'alert-type' => 'success'
-        // );
-
-        // return redirect()->route('all.category')->with($notification);
 
         $category = new CategoryType;
         $category->category_name = trim($request->category_name);

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Backend\CategoryTypeController;
+use App\Http\Controllers\ProductsController;
 
 
 
@@ -74,39 +75,52 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/update/category', 'UpdateCategory')->name('update.category');
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
+});
 
-    //Admin User All Route
-    Route::controller(AdminController::class)->group(function () {
+//Admin User All Route
+Route::controller(AdminController::class)->group(function () {
 
-        Route::get('/all/admin', 'AllAdmin')->name('all.admin');
-        Route::get('/add/admin', 'AddAdmin')->name('add.admin');
-        Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
-        Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
-        Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
-        Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
-    });
-
-
-    //Admin client All show
-    Route::controller(AdminController::class)->group(function () {
-
-        Route::get('/all/client', 'AllClient')->name('all.client');
-        Route::get('/add/client', 'AddClient')->name('add.client');
-        Route::post('/store/client', 'StoreClient')->name('store.client');
-        Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
-        Route::post('/update/client/{id}', 'UpdateClient')->name('update.client');
-        Route::get('/delete/client/{id}', 'DeleteClient')->name('delete.client');
-    });
+    Route::get('/all/admin', 'AllAdmin')->name('all.admin');
+    Route::get('/add/admin', 'AddAdmin')->name('add.admin');
+    Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
+    Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+    Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
+    Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
+});
 
 
-    Route::controller(AdminController::class)->group(function () {
+//Admin client All show
+Route::controller(AdminController::class)->group(function () {
 
-        Route::get('/all/seller', 'AllSeller')->name('all.seller');
-        Route::get('/add/seller', 'AddSeller')->name('add.seller');
-        Route::post('/store/seller', 'StoreSeller')->name('store.seller');
-        Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
-        Route::post('/update/seller/{id}', 'UpdateSeller')->name('update.seller');
-        Route::get('/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
+    Route::get('/all/client', 'AllClient')->name('all.client');
+    Route::get('/add/client', 'AddClient')->name('add.client');
+    Route::post('/store/client', 'StoreClient')->name('store.client');
+    Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
+    Route::post('/update/client/{id}', 'UpdateClient')->name('update.client');
+    Route::get('/delete/client/{id}', 'DeleteClient')->name('delete.client');
+});
+
+
+Route::controller(AdminController::class)->group(function () {
+
+    Route::get('/all/seller', 'AllSeller')->name('all.seller');
+    Route::get('/add/seller', 'AddSeller')->name('add.seller');
+    Route::post('/store/seller', 'StoreSeller')->name('store.seller');
+    Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
+    Route::post('/update/seller/{id}', 'UpdateSeller')->name('update.seller');
+    Route::get('/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
+});
+
+
+Route::middleware(['auth', 'role:seller'])->group(function () {
+
+    Route::controller(ProductsController::class)->group(function () {
+        Route::get('/all/products', 'AllProducts')->name('all.products');
+        Route::get('/add/products', 'AddProducts')->name('add.products');
+        Route::post('/store/products', 'StoreProducts')->name('store.products');
+        Route::get('/edit/products/{id}', 'EditProducts')->name('edit.products');
+        Route::post('/update/products', 'UpdateProducts')->name('update.products');
+        Route::get('/delete/products/{id}', 'DeleteProducts')->name('delete.products');
     });
 
 });

@@ -18,7 +18,11 @@
                     </a>
                 </li>
 
-               
+                <li>
+                    <a href="{{route('all.products')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-house"></span><span class="mtext">Products</span>
+                    </a>
+                </li>
 
 
 
