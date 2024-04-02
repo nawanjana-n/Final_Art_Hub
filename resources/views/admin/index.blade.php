@@ -21,7 +21,7 @@
                             </div>
                             <div class="widget-icon">
                                 <div class="icon" data-color="#00eccf">
-                                    <i class="icon-copy dw dw-calendar1"></i>
+                                    <i class="bi bi-brush-fill"></i>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="widget-icon">
                                 <div class="icon" data-color="#ff5b5b">
-                                    <span class="icon-copy ti-heart"></span>
+                                    <i class="bi bi-person-fill"></i>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="widget-icon">
                                 <div class="icon">
-                                    <i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i>
+                                    <i class="bi bi-people-fill" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="widget-icon">
                                 <div class="icon" data-color="#09cc06">
-                                    <i class="icon-copy fa fa-money" aria-hidden="true"></i>
+                                    <i class="bi bi-controller" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>

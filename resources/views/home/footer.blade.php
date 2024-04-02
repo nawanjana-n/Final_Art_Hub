@@ -126,17 +126,38 @@
     <!-- Footer Image Gallery Area End -->
 
     <!-- Copyright Area Start -->
-    <div class="copyright-area">
-        <div class="ruby-container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="copyright-text">
-                        <p><a target="_blank" href="#" style="color: black; font-weight: bold; font-style:normal;">Nuwandi Nawanjana</a></p>
+    <html>
+        <head>
+            <style>
+                /* CSS for blue background and white fonts */
+                .copyright-area {
+                    background-color: white;
+                    color: rgb(0, 242, 255); /* Set font color to white */
+                    padding: 20px; /* Adjust padding as needed */
+                }
+
+                /* Optionally, if you want to style the link inside the div */
+                .copyright-area a {
+                    color: white; /* Set link color to white */
+                }
+            </style>
+        </head>
+        <body>
+
+            <div class="copyright-area">
+                <div class="ruby-container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="copyright-text">
+                                <p><a target="_blank" href="#" style="color: rgb(0, 123, 255); font-weight: bold; font-style:normal;">Nuwandi Nawanjana</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+        </body>
+        </html>
     <!-- Copyright Area End -->
 
 </footer>
