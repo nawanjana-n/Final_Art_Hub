@@ -2156,7 +2156,8 @@ address strong, address b {
 }
 
 .products-wrapper .single-product-item .product-details .price {
-    color: #202020;
+    color: #de2121;
+    font-weight: 520;
 }
 
 .products-wrapper .single-product-item .product-details .btn-add-to-cart {

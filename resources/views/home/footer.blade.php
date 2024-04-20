@@ -77,10 +77,8 @@
 
                             <div class="footer-social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-flickr"></i></a>
                             </div>
 
                             <a href="#"><img src="assets2/img/payment.png" alt="Payment Method"/></a>

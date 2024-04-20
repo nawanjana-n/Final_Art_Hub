@@ -6,12 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\ProductsModel;
 
 class SellerController extends Controller
 {
     public function SellerDashboard()
     {
-        return view('seller.index');
+
+        $user_id = auth()->id(); // Get the ID of the currently authenticated user
+
+        // Count all products added by the user regardless of their status
+        $total_products_added_by_user = ProductsModel::where('seller_id', $user_id)->count();
+
+        return view('seller.index',compact('total_products_added_by_user'));
     }
 
     public function SellerLogout(Request $request)
@@ -90,5 +97,5 @@ class SellerController extends Controller
         return back()->with($notification);
     }
 
-  
+
 }

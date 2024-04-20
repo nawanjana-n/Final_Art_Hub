@@ -12,8 +12,15 @@ class ProductsModel extends Model
 
     protected $guarded = [];
 
+
+
     public function category()
     {
-        return $this->belongsTo(CategoryType::class, 'category');
+        return $this->belongsTo(CategoryType::class, 'category_id');
+    }
+
+    public function sellerss()
+    {
+        return $this->belongsTo(User::class, 'seller_id');
     }
 }

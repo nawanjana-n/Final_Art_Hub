@@ -76,6 +76,11 @@
                         <span class="micon fa fa-list-alt"></span><span class="mtext">Category</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.all.products')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-list"></span><span class="mtext">Products</span>
+                    </a>
+                </li>
 
 
 

@@ -17,7 +17,7 @@
                         <div class="widget-data">
                             <div class="weight-700 font-24 text-dark">75</div>
                             <div class="font-14 text-secondary weight-500">
-                                Appointment
+                                Pending Orders
                             </div>
                         </div>
                         <div class="widget-icon">
@@ -32,14 +32,14 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">124,551</div>
+                            <div class="weight-700 font-24 text-dark">{{ $total_products_added_by_user }}</div>
                             <div class="font-14 text-secondary weight-500">
-                                Total Patient
+                                My Products
                             </div>
                         </div>
                         <div class="widget-icon">
                             <div class="icon" data-color="#ff5b5b">
-                                <span class="icon-copy ti-heart"></span>
+                                <span class="icon-copy fa fa-list"></span>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <div class="widget-data">
                             <div class="weight-700 font-24 text-dark">400+</div>
                             <div class="font-14 text-secondary weight-500">
-                                Total Doctor
+                                All Orders
                             </div>
                         </div>
                         <div class="widget-icon">
@@ -82,7 +82,7 @@
             </div>
         </div>
 
-       
+
 
 
     </div>

@@ -1,5 +1,5 @@
 <div class="footer-wrap pd-20 mb-20 card-box">
-					Art Trade Designed By
+					Art Trade Developed By
 					<a href="https://github.com/nawanjana-n/Art-Trade-Hub.git" target="_blank"
 						>Nuwandi Nawanjana</a>
 				</div>

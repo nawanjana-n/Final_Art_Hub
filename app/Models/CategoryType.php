@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryType extends Model
 {
     use HasFactory;
+    protected $table = 'category_types';
         protected $guarded = [];
 
-protected $table = 'category_types';
+
 
 
 

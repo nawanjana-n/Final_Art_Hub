@@ -30,7 +30,7 @@
                             <form method="POST" action="{{ route('update.products') }}">
 
                                 @csrf
-                                <input type="hidden" name="id" value="{{ $categories->id }}">
+                                <input type="hidden" name="id" value="{{ $products->id }}">
 
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-md-2 col-form-label">Product Name</label>
@@ -38,13 +38,51 @@
 
 
                                         <input class="form-control @error('products_name') is-invalid @enderror"
-                                            value =" {{ $products->products_name }}" type="text" name="products_name"
-                                            placeholder="Enter Product Name">
+                                            value =" {{ $products->name }}" type="text" name="name" required>
                                     </div>
                                     @error('products_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Price</label>
+                                    <div class="col-sm-12 col-md-10">
+
+
+                                        <input class="form-control @error('price') is-invalid @enderror" type="number"
+                                            name="price" value ="{{ $products->price }}" required>
+                                    </div>
+                                    @error('price')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Description</label>
+                                    <div class="col-sm-12 col-md-10">
+
+
+                                        <input class="form-control @error('description') is-invalid @enderror"
+                                            type="text" name="description" value =" {{ $products->description }}"
+                                            required>
+                                    </div>
+                                    @error('description')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
 
 
 
@@ -66,10 +104,7 @@
 
                 </div>
             </div>
-            <div class="footer-wrap pd-20 mb-20 card-box mt-4">
-                Art Trade
-                <a href="https://github.com/dropways" target="_blank">Nuwandi Nawanjana</a>
-            </div>
+
         </div>
     </div>
 

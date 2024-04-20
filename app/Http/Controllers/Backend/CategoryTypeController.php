@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CategoryType;
+use App\Models\ProductsModel;
 
 class CategoryTypeController extends Controller
 {
@@ -23,7 +24,14 @@ class CategoryTypeController extends Controller
     public function index()
     {
         $categories = CategoryType::all();
-        return view('welcome', compact('categories'));
+
+        $products = ProductsModel::orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
+
+        return view('welcome', compact('categories', 'products'));
+
+
     }
 
     public function StoreCategory(Request $request)

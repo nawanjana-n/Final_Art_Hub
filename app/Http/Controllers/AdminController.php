@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\ProductsModel;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -30,7 +31,9 @@ class AdminController extends Controller
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 
-        return view('admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers'));
+        $total_products = ProductsModel::all()->count();
+
+        return view('admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers','total_products'));
     } //End Method
 
     public function AdminLogout(Request $request)

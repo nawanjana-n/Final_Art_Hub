@@ -26,6 +26,10 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+<!-- Slick Slider css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('../assets/src/plugins/slick/slick.css') }}" />
+<!-- bootstrap-touchspin css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('../assets/src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css') }}" />
 
  <style>
     .button-prints{
@@ -59,37 +63,7 @@
     <script src="{{ asset('../assets/src/plugins/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('../assets/vendors/scripts/dashboard3.js') }}"></script>
 
-    <script>
-        $(function() {
-            $(document).on('click', '#delete', function(e) {
-                e.preventDefault();
-                var link = $(this).attr("href");
 
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Confirm'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = link
-                        Swal.fire(
-                            'Deleted!',
-                            'Your data has been deleted.',
-                            'success'
-                        )
-                    }
-                })
-
-
-            });
-
-        });
-    </script>
 
 
     <script src="{{ asset('../assets/src/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
@@ -106,6 +80,8 @@
     <script src="{{ asset('../assets/src/plugins/datatables/js/vfs_fonts.js') }}"></script>
     <script src="{{ asset('../assets/vendors/scripts/datatable-setting.js') }}"></script>
 
+    <script src="{{ asset('../assets/src/plugins/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('../assets/src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js') }}"></script>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -132,12 +108,68 @@
         @endif
     </script>
 
+<script>
+    $(function() {
+        $(document).on('click', '#delete', function(e) {
+            e.preventDefault();
+            var link = $(this).attr("href");
 
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirm'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link
+                    Swal.fire(
+                        'Deleted!',
+                        'Your data has been deleted.',
+                        'success'
+                    )
+                }
+            })
+
+
+        });
+
+    });
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('assets/src/scripts/code/code.js') }}"></script>
 
-
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".product-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                infinite: true,
+                speed: 1000,
+                fade: true,
+                asNavFor: ".product-slider-nav",
+            });
+            jQuery(".product-slider-nav").slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: ".product-slider",
+                dots: false,
+                infinite: true,
+                arrows: false,
+                speed: 1000,
+                centerMode: true,
+                focusOnSelect: true,
+            });
+            $("input[name='demo3_22']").TouchSpin({
+                initval: 1,
+            });
+        });
+    </script>
 
 
 

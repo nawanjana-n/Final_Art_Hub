@@ -12,14 +12,14 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
 
-                <li>
-                    <a href="{{route('seller.dashboard')}}" class="dropdown-toggle no-arrow">
+                <li >
+                    <a href="{{route('seller.dashboard')}}" class="dropdown-toggle no-arrow {{ Route::is('seller.dashboard') ? 'active' : '' }}">
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{route('all.products')}}" class="dropdown-toggle no-arrow">
+                    <a href="{{route('all.products')}}" class="dropdown-toggle no-arrow {{ Route::is('all.products') ? 'active' : '' }}">
                         <span class="micon bi bi-house"></span><span class="mtext">Products</span>
                     </a>
                 </li>

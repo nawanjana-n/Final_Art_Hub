@@ -14,7 +14,7 @@
                         <div class="page-title-content">
                             <h1>Shopping Cart</h1>
                             <ul class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{url('/')}}">Home</a></li>
                                 <li><a href="cart.html" class="active">Cart</a></li>
                             </ul>
                         </div>

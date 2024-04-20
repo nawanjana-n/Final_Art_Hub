@@ -1,6 +1,6 @@
-@extends('seller.seller_dashboard')
+@extends('admin.admin_dashboard')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Products')
-@section('seller')
+@section('admin')
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Products</h4>
+                                <h4>All Products</h4>
                             </div>
 
                         </div>
@@ -19,13 +19,7 @@
 
                 <!-- Export Datatable start -->
                 <div class="card-box mb-30">
-                    <div class="pd-20">
-                        <div class="row justify-content-end">
-                            <div class="col-auto">
-                                <a href="{{ route('add.products') }}" class="btn btn-info">Add Products</a>
-                            </div>
-                        </div>
-                    </div>
+<br>
                     <div class="pb-20">
                         <table class="table hover multiple-select-row data-table-export nowrap">
                             <thead>
@@ -35,26 +29,26 @@
                                     <th>Product Name</th>
                                     <th>Price</th>
                                     <th>Category Name</th>
+                                    <th>Seller ID</th>
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($types as $key => $item)
+                                @foreach ($typess as $key => $item)
                                     <tr>
 
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->price }}</td>
                                         <td>{{ optional($item->category)->category_name ?: 'N/A' }}</td>
-
+                                        <td>{{ $item->seller_id }}</td>
                                         <td>
-                                            <a href="{{ route('edit.products', $item->id) }}"
-                                                class="btn btn-warning">Edit</a>
-                                            <a href="{{ route('delete.products', $item->id) }}" class="btn btn-danger"
+                                            <a href="{{ route('admin.view.products', $item->id) }}"
+                                                class="btn btn-info">View</a>
+                                            <a href="{{ route('admin.delete.products', $item->id) }}" class="btn btn-danger"
                                                 id="delete">Delete</a>
-                                                <a href="{{ route('view.products', $item->id) }}"
-                                                    class="btn btn-info">View</a>
+
                                         </td>
                                     </tr>
                                 @endforeach

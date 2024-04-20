@@ -14,7 +14,7 @@
                                 <h4>Welcome To</h4>
                                 <h2>Art Trade Hub </h2>
                                 <p>Connecting Art Sellers & Buyers Online</p>
-                                <a href="#" class="btn-long-arrow">Shop Now</a>
+                                <a href="{{ route('shop') }}" class="btn-long-arrow">Shop Now</a>
                             </div>
                         </div>
                         <!-- Banner Single Carousel End -->
@@ -25,7 +25,7 @@
                                 <h4>New Collection 2024</h4>
                                 <h2>Art Trade Hub</h2>
                                 <p>Connecting Art Sellers & Buyers Online.</p>
-                                <a href="#" class="btn-long-arrow">Shop Now</a>
+                                <a href="{{ route('shop') }}" class="btn-long-arrow">Shop Now</a>
                             </div>
                         </div>
                         <!-- Banner Single Carousel End -->
@@ -43,7 +43,7 @@
                 <div class="col-lg-6">
                     <!-- About Image Area Start -->
                     <div class="about-image-wrap">
-                        <a href="about.html"><img src="assets2/img/about-img.png" alt="About Us" class="img-fluid" /></a>
+                        <a href="#"><img src="assets2/img/about-img.png" alt="About Us" class="img-fluid" /></a>
                     </div>
                     <!-- About Image Area End -->
                 </div>
@@ -63,7 +63,7 @@
                                 fostering a thriving online community of creativity, collaboration, and cultural exchange.
                             </p>
 
-                            <a href="about.html" class="btn btn-long-arrow">Learn More</a>
+                            <a href="#" class="btn btn-long-arrow">Learn More</a>
 
 
                             <h4 class="vertical-text">WHO WE ARE?</h4>
@@ -84,8 +84,8 @@
                 <div class="col-lg-12 text-center">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h2>New Collection Products</h2>
-                        <p>Best Arts on sale.</p>
+                        <h2>All Collection Products</h2>
+                        <p>All Category on Arts.</p>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -132,143 +132,32 @@
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
                                         <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 6)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Red Flowers</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge">New</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <!-- Single Product Item -->
 
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Kitten Drawn by Water colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Shoe Flowers</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Bird Drawn by Water Colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
                                     </div>
                                 </div>
                             </div>
@@ -277,179 +166,29 @@
                                 aria-labelledby="new-products-tab">
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 5)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Red Flowers</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge">New</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Red Flowers123</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge">New</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Kitten Drawn by Water colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge">New</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Shoe Flowers</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge">New</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">A Pinch of Red Flowers</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -458,144 +197,32 @@
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
                                         <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 4)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Crown Summit Backpack</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <!-- Single Product Item -->
 
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">a Bird Drawn by Water Colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">MH01-Black</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Chaz Kangeroo Hoodie</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
                                     </div>
                                 </div>
                             </div>
@@ -604,143 +231,29 @@
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
                                         <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 2)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Crownwxs Summit Backpack</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">a Bird Drawn by Water Colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">MH01-Black</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Chaz Kangeroo Hoodie</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <!-- Single Product Item -->
                                     </div>
                                 </div>
@@ -750,143 +263,29 @@
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
                                         <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 1)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Crown Summitfefe Backpack</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">a Bird Drawn by Water Colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">MH01-Black</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Chaz Kangeroo Hoodie</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <!-- Single Product Item -->
                                     </div>
                                 </div>
@@ -896,143 +295,29 @@
                                 <div class="products-wrapper">
                                     <div class="products-carousel owl-carousel">
                                         <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-1.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
+                                        @foreach ($products as $product)
+                                            @if ($product->category_id == 3)
+                                                <div class="col-md-12 single-product-item text-center">
+                                                    <figure class="product-thumb">
+                                                        <a href="#"><img
+                                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                                alt="Products" class="img-fluid3"></a>
+                                                    </figure>
 
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">digital Summit Backpack</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                    <i class="fa fa-star-o"></i>
+
+                                                    <div class="product-details">
+                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+
+                                                        <span class="price">$ {{ $product->price }}</span>
+                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
+                                                            Cart</a>
+                                                        <span class="product-bedge">New</span>
+                                                    </div>
+
+
                                                 </div>
-                                                <span class="price">$52.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/sale-product-2.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">a Bird Drawn by Water Colours</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <span class="price">$152.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/product-3.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">MH01-Black</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span class="price">$43.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Product Item -->
-
-                                        <!-- Single Product Item -->
-                                        <div class="single-product-item text-center">
-                                            <figure class="product-thumb">
-                                                <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                                        alt="Products" class="img-fluid3"></a>
-                                            </figure>
-
-                                            <div class="product-details">
-                                                <h2><a href="single-product.html">Chaz Kangeroo Hoodie</a></h2>
-                                                <div class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-half"></i>
-                                                </div>
-                                                <span class="price">$83.00</span>
-                                                <a href="single-product.html" class="btn btn-add-to-cart">+ Add to
-                                                    Cart</a>
-                                                <span class="product-bedge sale">Sale</span>
-                                            </div>
-
-                                            <div class="product-meta">
-                                                <button type="button" data-toggle="modal" data-target="#quickView">
-                                                    <span data-toggle="tooltip" data-placement="left"
-                                                        title="Quick View"><i class="fa fa-compress"></i></span>
-                                                </button>
-                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                                    title="Compare"><i class="fa fa-tags"></i></a>
-                                            </div>
-                                        </div>
+                                            @endif
+                                        @endforeach
                                         <!-- Single Product Item -->
                                     </div>
                                 </div>
@@ -1050,36 +335,7 @@
     <div id="product-categories-area">
         <div class="ruby-container">
             <div class="row">
-                {{-- <div class="col-lg-6">
-                <div class="large-size-cate">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="single-cat-item">
-                                <figure class="category-thumb">
-                                    <a href="#"><img src="assets2/img/paint-main.jpg" alt="Paint Category"
-                                                     class="img-fluidd"/></a>
 
-                                    <figcaption class="category-name">
-                                        <a href="#">Paintings</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="single-cat-item">
-                                <figure class="category-thumb">
-                                    <a href="#"><img src="assets2/img/scul.png" alt="Scul Category" class="img-fluidd"/></a>
-
-                                    <figcaption class="category-name">
-                                        <a href="#">Sculptures</a>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
                 <div class="col-lg-12">
                     <div class="small-size-cate">
@@ -1092,8 +348,7 @@
                                                 <figure class="category-thumb">
                                                     <a href="#">
                                                         <img src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
-                                                            alt="{{ $category->category_name }}"
-                                                            class="img-fluidd" /></a>
+                                                            alt="{{ $category->category_name }}" class="img-fluidd" /></a>
 
                                                     <figcaption class="category-name">
                                                         <a href="#">{{ $category->category_name }}</a>
@@ -1102,59 +357,7 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    {{-- <div class="">
-                                        <div class="single-cat-item">
-                                            <figure class="category-thumb">
-                                                <a href="#"><img src="assets2/img/paint-main.jpg"
-                                                        alt="Photo Category" class="img-fluidd" /></a>
 
-                                                <figcaption class="category-name">
-                                                    <a href="#">Paintings</a>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-
-                                    <div class="">
-                                        <div class="single-cat-item">
-                                            <figure class="category-thumb">
-                                                <a href="#"><img src="assets2/img/draw1.png"
-                                                        alt="Drawings Category" class="img-fluidd" /></a>
-
-                                                <figcaption class="category-name">
-                                                    <a href="#">DRAWINGS</a>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-
-                                    <div class="">
-                                        <div class="single-cat-item">
-                                            <figure class="category-thumb">
-                                                <a href="#"><img src="assets2/img/print-make.jpg"
-                                                        alt="PrintMaking Category" class="img-fluidd" /></a>
-
-                                                <figcaption class="category-name">
-
-                                                    <a href="#">PRINT MAKINGS</a>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div>
-
-                                    <div class="">
-                                        <div class="single-cat-item">
-                                            <figure class="category-thumb">
-                                                <a href="#"><img src="assets2/img/dig-arts.jpg"
-                                                        alt="Digital Category" class="img-fluidd" /></a>
-
-                                                <figcaption class="category-name">
-
-                                                    <a href="#">DIGTAL ARTS</a>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1186,174 +389,28 @@
                     <div class="products-wrapper">
                         <div class="new-products-carousel owl-carousel">
                             <!-- Single Product Item -->
-                            <div class="single-product-item text-center">
-                                <figure class="product-thumb">
-                                    <a href="single-product.html"><img src="assets2/img/new-product-1.jpg"
-                                            alt="Products" class="img-fluid4"></a>
-                                </figure>
+                            @foreach ($products as $product)
+                                <div class="col-md-12 single-product-item text-center">
+                                    <figure class="product-thumb">
+                                        <a href="#"><img
+                                                src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                alt="Products" class="img-fluid4"></a>
+                                    </figure>
 
-                                <div class="product-details">
-                                    <h2><a href="single-product.html">Print Making of Flowers </a></h2>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half"></i>
-                                        <i class="fa fa-star-o"></i>
+                                    <div class="product-details">
+                                        <h2><a href="#"
+                                                style="font-weight: bold; font-size: 1.5rem;">{{ $product->name }}</a>
+                                        </h2>
+
+                                        <span class="price">$ {{ $product->price }}</span>
+                                        <a href="#" class="btn btn-add-to-cart">+ Add to Cart</a>
+                                        <span class="product-bedge">New</span>
                                     </div>
-                                    <span class="price">$52.00</span>
-                                    <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-                                    <span class="product-bedge">New</span>
+
+
                                 </div>
+                            @endforeach
 
-                                <div class="product-meta">
-                                    <button type="button" data-toggle="modal" data-target="#quickView">
-                                        <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                class="fa fa-compress"></i></span>
-                                    </button>
-                                    <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                        title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                        title="Compare"><i class="fa fa-tags"></i></a>
-                                </div>
-                            </div>
-                            <!-- Single Product Item -->
-
-                            <!-- Single Product Item -->
-                            <div class="single-product-item text-center">
-                                <figure class="product-thumb">
-                                    <a href="single-product.html"><img src="assets2/img/new-product-2.jpg"
-                                            alt="Products" class="img-fluid4"></a>
-                                </figure>
-
-                                <div class="product-details">
-                                    <h2><a href="single-product.html">sculpture of a young woman</a></h2>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <span class="price">$152.00</span>
-                                    <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-                                    <span class="product-bedge">New</span>
-                                </div>
-
-                                <div class="product-meta">
-                                    <button type="button" data-toggle="modal" data-target="#quickView">
-                                        <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                class="fa fa-compress"></i></span>
-                                    </button>
-                                    <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                        title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                        title="Compare"><i class="fa fa-tags"></i></a>
-                                </div>
-                            </div>
-                            <!-- Single Product Item -->
-
-                            <!-- Single Product Item -->
-                            <div class="single-product-item text-center">
-                                <figure class="product-thumb">
-                                    <a href="single-product.html"><img src="assets2/img/new-product-3.jpg"
-                                            alt="Products" class="img-fluid4"></a>
-                                </figure>
-
-                                <div class="product-details">
-                                    <h2><a href="single-product.html">a painting of two girls</a></h2>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <span class="price">$43.00</span>
-                                    <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-                                    <span class="product-bedge">New</span>
-                                </div>
-
-                                <div class="product-meta">
-                                    <button type="button" data-toggle="modal" data-target="#quickView">
-                                        <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                class="fa fa-compress"></i></span>
-                                    </button>
-                                    <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                        title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                        title="Compare"><i class="fa fa-tags"></i></a>
-                                </div>
-                            </div>
-                            <!-- Single Product Item -->
-
-                            <!-- Single Product Item -->
-                            <div class="single-product-item text-center">
-                                <figure class="product-thumb">
-                                    <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                            alt="Products" class="img-fluid4"></a>
-                                </figure>
-
-                                <div class="product-details">
-                                    <h2><a href="single-product.html">A digital art of a kitten</a></h2>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half"></i>
-                                    </div>
-                                    <span class="price">$83.00</span>
-                                    <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-                                    <span class="product-bedge sale">Sale</span>
-                                </div>
-
-                                <div class="product-meta">
-                                    <button type="button" data-toggle="modal" data-target="#quickView">
-                                        <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                class="fa fa-compress"></i></span>
-                                    </button>
-                                    <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                        title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                        title="Compare"><i class="fa fa-tags"></i></a>
-                                </div>
-                            </div>
-                            <!-- Single Product Item -->
-
-                            <!-- Single Product Item -->
-                            <div class="single-product-item text-center">
-                                <figure class="product-thumb">
-                                    <a href="single-product.html"><img src="assets2/img/new-product-4.jpg"
-                                            alt="Products" class="img-fluid4"></a>
-                                </figure>
-
-                                <div class="product-details">
-                                    <h2><a href="single-product.html">Chaz Kangeroo Hoodie</a></h2>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half"></i>
-                                    </div>
-                                    <span class="price">$83.00</span>
-                                    <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-                                    <span class="product-bedge sale">Sale</span>
-                                </div>
-
-                                <div class="product-meta">
-                                    <button type="button" data-toggle="modal" data-target="#quickView">
-                                        <span data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                class="fa fa-compress"></i></span>
-                                    </button>
-                                    <a href="wishlist.html" data-toggle="tooltip" data-placement="left"
-                                        title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="compare.html" data-toggle="tooltip" data-placement="left"
-                                        title="Compare"><i class="fa fa-tags"></i></a>
-                                </div>
-                            </div>
-                            <!-- Single Product Item -->
                         </div>
                     </div>
                 </div>
@@ -1400,10 +457,12 @@
             </div>
         </div>
     </section>
+
+
     <!--== Testimonial Area End ==-->
 
     <!--== Blog Area Start ==-->
-    <section id="blog-area">
+    {{-- <section id="blog-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -1422,19 +481,19 @@
                         <!-- Sale  Item 1 Start -->
                         <div class="single-blog-wrap">
                             <figure class="blog-thumb">
-                                <a href="single-blog.html"><img src="assets2/img/sale-1.jpg" alt="blog"
+                                <a href="#"><img src="assets2/img/sale-1.jpg" alt="blog"
                                         class="img-fluid" /></a>
                                 <figcaption class="blog-icon">
-                                    <a href="single-blog.html"><i class="fa fa-file-image-o"></i></a>
+                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
                                 </figcaption>
                             </figure>
 
                             <div class="blog-details">
-                                <h3><a href="single-blog.html">digital art of a girl</a></h3>
+                                <h3><a href="#">digital art of a girl</a></h3>
                                 <span class="post-date">20/January/2024</span>
                                 <p>The girl is portrayed with delicate features and flowing hair, surrounded by swirling
                                     patterns and glowing lights that create a dreamlike atmosphere. .</p>
-                                <a href="single-blog.html" class="btn-long-arrow">Read More</a>
+                                <a href="#" class="btn-long-arrow">Read More</a>
                             </div>
                         </div>
                         <!-- Sale Item 1 End -->
@@ -1444,20 +503,20 @@
                         <!-- Sale  Item  2 Start -->
                         <div class="single-blog-wrap">
                             <figure class="blog-thumb">
-                                <a href="single-blog.html"><img src="assets2/img/sale-2.jpg" alt="blog"
+                                <a href="#"><img src="assets2/img/sale-2.jpg" alt="blog"
                                         class="img-fluid" /></a>
                                 <figcaption class="blog-icon">
-                                    <a href="single-blog.html"><i class="fa fa-file-image-o"></i></a>
+                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
                                 </figcaption>
                             </figure>
 
                             <div class="blog-details">
-                                <h3><a href="single-blog.html">pencil art of a young woman</a></h3>
+                                <h3><a href="#">pencil art of a young woman</a></h3>
                                 <span class="post-date">20/January/2024</span>
                                 <p>The pencil art portrays a young woman with striking realism and emotion. Through the
                                     skilled use of shading and delicate lines, the artist captures the intricate details of
                                     the woman's features, from the curve of her lips to the intensity of her gaze.</p>
-                                <a href="single-blog.html" class="btn-long-arrow">Read More</a>
+                                <a href="#" class="btn-long-arrow">Read More</a>
                             </div>
                         </div>
                         <!-- Sale Item 2 End -->
@@ -1467,20 +526,20 @@
                         <!-- Single Blog Item Start -->
                         <div class="single-blog-wrap">
                             <figure class="blog-thumb">
-                                <a href="single-blog.html"><img src="assets2/img/sale-3.jpg" alt="blog"
+                                <a href="#"><img src="assets2/img/sale-3.jpg" alt="blog"
                                         class="img-fluid" /></a>
                                 <figcaption class="blog-icon">
-                                    <a href="single-blog.html"><i class="fa fa-file-image-o"></i></a>
+                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
                                 </figcaption>
                             </figure>
 
                             <div class="blog-details">
-                                <h3><a href="single-blog.html">a drawing of a sunset</a></h3>
+                                <h3><a href="#">a drawing of a sunset</a></h3>
                                 <span class="post-date">20/January/2024</span>
                                 <p>The drawing depicts a serene sunset scene with captivating beauty and tranquility. The
                                     artist skillfully captures the warm hues of the setting sun as it dips below the
                                     horizon, casting a golden glow across the sky..</p>
-                                <a href="single-blog.html" class="btn-long-arrow">Read More</a>
+                                <a href="#" class="btn-long-arrow">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog Item End -->
@@ -1488,7 +547,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--== Blog Area End ==-->
+    
 
 @endsection

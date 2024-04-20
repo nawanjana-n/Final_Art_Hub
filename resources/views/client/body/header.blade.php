@@ -29,7 +29,7 @@
                         Profile</a>
                     <a class="dropdown-item" href="{{ route('client.change.password') }}"><i
                             class="bi bi-pencil-square"></i> Change Password</a>
-                    <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
+                    <a class="dropdown-item" href="{{route('contact')}}"><i class="dw dw-help"></i> Contact Us</a>
                     <a class="dropdown-item" href="{{ route('client.logout') }}"><i class="dw dw-logout"></i> Log
                         Out</a>
                 </div>

@@ -5,50 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProductsModel;
 use App\Models\CategoryType;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-class ProductsController extends Controller
 
+
+class ProductsController extends Controller
 {
     public function AllProducts()
     {
-        $types = ProductsModel::latest()->get();
+        // Retrieve the currently authenticated user's ID
+        $userId = Auth::id();
+
+        // Retrieve products created by the currently authenticated user
+        $types = ProductsModel::where('seller_id', $userId)
+            ->orderBy('created_at', 'desc')->get();
+
         return view('seller.backend.products.all_products', compact('types'));
     } // End Method
 
     public function AddProducts()
     {
         $categoryall = CategoryType::all();
-        return view('seller.backend.products.add_products',compact('categoryall'));
+        return view('seller.backend.products.add_products', compact('categoryall'));
+
     } // End Method
 
 
 
     public function StoreProducts(Request $request)
     {
-        // $request->validate([
-        //     'category_name' => 'required',
-
-
-        // ]);
-        // CategoryType::insert([
-        //     'category_name' => $request->category_name,
-        // ]);
-
-        // $notification = array(
-        //     'message' => 'Category Added Successfully',
-        //     'alert-type' => 'success'
-        // );
-
-        // return redirect()->route('all.category')->with($notification);
 
         $products = new ProductsModel;
         $products->name = trim($request->name);
         $products->price = trim($request->price);
-        $products->category = $request->category;
+        $products->category_id = $request->category_id;
         $products->description = trim($request->description);
 
         $products->seller_id = Auth::user()->id;
-
 
 
 
@@ -59,6 +52,13 @@ class ProductsController extends Controller
                 $imagePaths[] = 'upload/product_images/' . $filename; // Store image path in an array
             }
             $products['photo'] = json_encode($imagePaths); // Save array of image paths as JSON string in database
+        }
+
+        if ($request->file('main_photo')) {
+            $file = $request->file('main_photo');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/product_main_image'), $filename);
+            $products->main_photo = $filename;
         }
 
 
@@ -79,31 +79,45 @@ class ProductsController extends Controller
     public function EditProducts($id)
     {
         $products = ProductsModel::findOrFail($id);
-        return view('seller.backend.product.edit_products', compact('products'));
+        $categories = CategoryType::all();
+        if ($products->seller_id != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to view this product.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('all.products')->with($notification);
+        }
+        return view('seller.backend.products.edit_products', compact('products', 'categories'));
 
     } // End Method
 
-    public function UpdateProduct(Request $request)
+
+    public function UpdateProducts(Request $request)
     {
-        $cid = $request->id;
-        ProductsModel::findOrFail($cid)->update([
-
-            'product_name' => $request->product_name,
+        $pid = $request->id;
+        $products = ProductsModel::findOrFail($pid);
 
 
+        // Update other fields
+        $products->name = $request->name;
+        $products->price = $request->price;
+        $products->description = $request->description;
 
 
-        ]);
 
+        // Save the changes to the database
+        $products->save();
+
+        //Redirect back with a success message
         $notification = array(
-            'message' => 'Product Updated Successfully',
+            'message' => 'Products Updated',
             'alert-type' => 'success'
         );
 
         return redirect()->route('all.products')->with($notification);
-
-    } //End Method
-
+    }
 
     public function DeleteProducts($id)
     {
@@ -117,6 +131,7 @@ class ProductsController extends Controller
                 unlink($imagePath);
             }
         }
+
         $products->delete();
 
         $notification = array(
@@ -127,5 +142,92 @@ class ProductsController extends Controller
         return redirect()->back()->with($notification);
 
     } //End Method
+
+    public function ViewProducts($id)
+    {
+        $products = ProductsModel::findOrFail($id);
+        if ($products->seller_id != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to view this product.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('all.products')->with($notification);
+        }
+
+        return view('seller.backend.products.view_products', compact('products'));
+
+    } // End Method
+
+    public function AdminAllProducts()
+    {
+
+
+        // Retrieve products created by the currently authenticated user
+        $typess = ProductsModel::orderBy('created_at', 'desc')->get();
+
+        $sellers = User::all();
+        return view('admin.backend.products.all_products', compact('typess', 'sellers'));
+    } // End Method
+
+    public function AdminViewProducts($id)
+    {
+        $productsts = ProductsModel::findOrFail($id);
+
+
+        return view('admin.backend.products.view_products', compact('productsts'));
+
+    } // End Method
+
+    public function destroy($id)
+    {
+        $productts = ProductsModel::findOrFail($id);
+        $productts->delete();
+
+        $notification = [
+            'message' => 'Product Deleted Success',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->route('admin.all.products')->with($notification);
+    }
+
+    public function AdminDeleteProducts($id)
+    {
+        $products = ProductsModel::findOrFail($id);
+        if ($products->photo) {
+            // Determine the file path
+            $imagePath = public_path('upload/product_images/' . $products->photo);
+
+            // Check if the file exists before attempting to delete it
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
+        $products->delete();
+
+        $notification = array(
+            'message' => 'Product Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } //End Method
+
+    public function index()
+    {
+        // Retrieve products with their regular price and sale price
+        $products = ProductsModel::orderBy('created_at', 'desc')->get();
+
+
+
+
+
+        // Pass data to the view
+        return view('shop', compact('products'));
+    }
 
 }

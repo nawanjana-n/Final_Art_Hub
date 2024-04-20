@@ -72,7 +72,7 @@
                                     <label class="col-sm-12 col-md-2 col-form-label">Category</label>
                                     <div class="col-sm-12 col-md-10">
 
-                                        <select class="form-control" id="category" name="category">
+                                        <select class="form-control" id="category" name="category_id">
                                             @foreach ($categoryall as $category)
                                                 <option value="{{ $category->id }}">{{ $category->category_name }}
                                                 </option>
@@ -103,7 +103,16 @@
 
 
 
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Display Main Image</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <div class="form-group">
 
+                                            <input type="file" class="form-control-file form-control height-auto"
+                                                id = "image" name="main_photo" required />
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-md-2 col-form-label">Product Images</label>
@@ -115,6 +124,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+
 
 
 

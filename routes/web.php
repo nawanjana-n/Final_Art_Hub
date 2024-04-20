@@ -7,13 +7,21 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Backend\CategoryTypeController;
 use App\Http\Controllers\ProductsController;
-
+use Illuminate\Http\Request;
 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::post('/contact', function (Request $request) {
+//     // Process the form submission here
+//     // For example, you can send an email, store data in the database, etc.
+
+//     // After processing, you can redirect the user back to the contact page
+//     return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
+// })->name('contact.submit');
 
 Route::get('/', [CategoryTypeController::class, 'index']);
 
@@ -30,7 +38,15 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::view('/shop', 'shop')->name('shop');
+Route::get('shop', [ProductsController::class, 'index'])->name('shop');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
@@ -75,43 +91,51 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/update/category', 'UpdateCategory')->name('update.category');
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
+
+
+    //Admin User All Route
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/all/admin', 'AllAdmin')->name('all.admin');
+        Route::get('/add/admin', 'AddAdmin')->name('add.admin');
+        Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
+        Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+        Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
+        Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
+    });
+
+
+    //Admin client All show
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/all/client', 'AllClient')->name('all.client');
+        Route::get('/add/client', 'AddClient')->name('add.client');
+        Route::post('/store/client', 'StoreClient')->name('store.client');
+        Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
+        Route::post('/update/client/{id}', 'UpdateClient')->name('update.client');
+        Route::get('/delete/client/{id}', 'DeleteClient')->name('delete.client');
+    });
+
+
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/all/seller', 'AllSeller')->name('all.seller');
+        Route::get('/add/seller', 'AddSeller')->name('add.seller');
+        Route::post('/store/seller', 'StoreSeller')->name('store.seller');
+        Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
+        Route::post('/update/seller/{id}', 'UpdateSeller')->name('update.seller');
+        Route::get('/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
+    });
+
+    Route::controller(ProductsController::class)->group(function () {
+        Route::get('/admin/all/products', 'AdminAllProducts')->name('admin.all.products');
+        Route::get('/admin/view/products/{id}', 'AdminViewProducts')->name('admin.view.products');
+        Route::get('/admin/delete/products/{id}', 'AdminDeleteProducts')->name('admin.delete.products');
+        Route::delete('/admin/products/{id}', 'destroy')->name('products.destroy');
+
+    });
+
 });
-
-//Admin User All Route
-Route::controller(AdminController::class)->group(function () {
-
-    Route::get('/all/admin', 'AllAdmin')->name('all.admin');
-    Route::get('/add/admin', 'AddAdmin')->name('add.admin');
-    Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
-    Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
-    Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
-    Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
-});
-
-
-//Admin client All show
-Route::controller(AdminController::class)->group(function () {
-
-    Route::get('/all/client', 'AllClient')->name('all.client');
-    Route::get('/add/client', 'AddClient')->name('add.client');
-    Route::post('/store/client', 'StoreClient')->name('store.client');
-    Route::get('/edit/client/{id}', 'EditClient')->name('edit.client');
-    Route::post('/update/client/{id}', 'UpdateClient')->name('update.client');
-    Route::get('/delete/client/{id}', 'DeleteClient')->name('delete.client');
-});
-
-
-Route::controller(AdminController::class)->group(function () {
-
-    Route::get('/all/seller', 'AllSeller')->name('all.seller');
-    Route::get('/add/seller', 'AddSeller')->name('add.seller');
-    Route::post('/store/seller', 'StoreSeller')->name('store.seller');
-    Route::get('/edit/seller/{id}', 'EditSeller')->name('edit.seller');
-    Route::post('/update/seller/{id}', 'UpdateSeller')->name('update.seller');
-    Route::get('/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
-});
-
-
 Route::middleware(['auth', 'role:seller'])->group(function () {
 
     Route::controller(ProductsController::class)->group(function () {
@@ -119,11 +143,14 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
         Route::get('/add/products', 'AddProducts')->name('add.products');
         Route::post('/store/products', 'StoreProducts')->name('store.products');
         Route::get('/edit/products/{id}', 'EditProducts')->name('edit.products');
+        Route::get('/view/products/{id}', 'ViewProducts')->name('view.products');
         Route::post('/update/products', 'UpdateProducts')->name('update.products');
         Route::get('/delete/products/{id}', 'DeleteProducts')->name('delete.products');
     });
 
 });
+
+
 
 
 
