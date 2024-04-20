@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\ProductsModel;
 use Illuminate\Support\Facades\Hash;
+use App\Models\InquiriesModel;
 
 
 class AdminController extends Controller
@@ -502,7 +503,11 @@ class AdminController extends Controller
         return redirect()->back()->with($notification);
     }
 
-
-
+    public function AdminInquiries()
+    {
+        $admininquiries = InquiriesModel::orderBy('created_at', 'desc')->get();
+        return view('admin.inquiries', compact('admininquiries'));
+    }
 
 }
+

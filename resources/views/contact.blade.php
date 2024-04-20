@@ -96,17 +96,17 @@
                 <div class="contact-form-wrap">
                     <h2>Request a Quote</h2>
 
-                    <form id="contact-form" action="#" method="get">
+                    <form id="contact-form" action="{{route('contact.form')}}" method="post">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="single-input-item">
-                                    <input type="text" name="first_name" placeholder="First Name *" required/>
+                                    <input type="text" name="f_name" placeholder="First Name *" required/>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="single-input-item">
-                                    <input type="text" name="last_name" placeholder="Last Name *" required/>
+                                    <input type="text" name="l_name" placeholder="Last Name *" required/>
                                 </div>
                             </div>
                         </div>
@@ -114,13 +114,13 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="single-input-item">
-                                    <input type="email" name="email_address" placeholder="Email Address *" required/>
+                                    <input type="email" name="email" placeholder="Email Address *" required/>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="single-input-item">
-                                    <input type="text" name="contact_subject" placeholder="Subject *" required/>
+                                    <input type="text" name="subject" placeholder="Subject *" required/>
                                 </div>
                             </div>
                         </div>

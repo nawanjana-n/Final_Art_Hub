@@ -39,12 +39,14 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('shop', [ProductsController::class, 'index'])->name('shop');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', function () {return view('contact');})->name('contact');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+
+
+Route::post('/contact/form', [ProductsController::class, 'InsertInquiries'])->name('contact.form');
 
 
 
@@ -55,6 +57,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+
     // web.php
 }); //End Group Admin Middleware
 
@@ -102,6 +105,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
         Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
         Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
+
+        Route::get('/admin/inquiries', 'AdminInquiries')->name('admin.inquiries');
+
     });
 
 

@@ -82,6 +82,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('admin.inquiries')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-contact"></span><span class="mtext">Inquiries</span>
+                    </a>
+                </li>
+
 
 
             </ul>

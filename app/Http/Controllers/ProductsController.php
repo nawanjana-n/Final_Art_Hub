@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InquiriesModel;
 use Illuminate\Http\Request;
 use App\Models\ProductsModel;
 use App\Models\CategoryType;
@@ -229,5 +230,31 @@ class ProductsController extends Controller
         // Pass data to the view
         return view('shop', compact('products'));
     }
+
+
+
+
+    public function InsertInquiries(Request $request)
+    {
+
+        $inquiries = new InquiriesModel;
+        $inquiries->f_name = trim($request->f_name);
+        $inquiries->l_name = trim($request->l_name);
+        $inquiries->email = $request->email;
+        $inquiries->subject = trim($request->subject);
+        $inquiries->message = trim($request->message);
+
+        $inquiries->save();
+
+        $notification = array(
+            'message' => 'Inquiry Sent Succssfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('contact')->with($notification);
+
+    } //End Method
+
+
 
 }
