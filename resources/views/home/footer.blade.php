@@ -8,7 +8,7 @@
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
                             <figure class="callto-thumb">
-                                <img src="assets2/img/air-plane.png" alt="WorldWide Shipping"/>
+                                <img src="../assets2/img/air-plane.png" alt="WorldWide Shipping"/>
                             </figure>
                             <div class="callto-info">
                                 <h2>Shipping Worldwide</h2>
@@ -22,7 +22,7 @@
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
                             <figure class="callto-thumb">
-                                <img src="assets2/img/support.png" alt="Support"/>
+                                <img src="../assets2/img/support.png" alt="Support"/>
                             </figure>
                             <div class="callto-info">
                                 <h2>24/7 CUSTOMER SERVICE</h2>
@@ -36,7 +36,7 @@
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
                             <figure class="callto-thumb">
-                                <img src="assets2/img/money-back.png" alt="Money Back"/>
+                                <img src="../assets2/img/money-back.png" alt="Money Back"/>
                             </figure>
                             <div class="callto-info">
                                 <h2>MONEY BACK Guarantee!</h2>
@@ -50,7 +50,7 @@
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
                             <figure class="callto-thumb">
-                                <img src="assets2/img/cog.png" alt="Guide"/>
+                                <img src="../assets2/img/cog.png" alt="Guide"/>
                             </figure>
                             <div class="callto-info">
                                 <h2>SHOPPING GUIDE</h2>
@@ -81,7 +81,7 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
 
-                            <a href="#"><img src="assets2/img/payment.png" alt="Payment Method"/></a>
+                            <a href="#"><img src="../assets2/img/payment.png" alt="Payment Method"/></a>
                         </div>
                     </div>
                 </div>
@@ -98,22 +98,22 @@
                     <div class="col-lg-12">
                         <div class="imgage-gallery-carousel owl-carousel">
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-1.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-1.jpg" alt="Gallery"/></a>
                             </div>
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-2.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-2.jpg" alt="Gallery"/></a>
                             </div>
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-3.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-3.jpg" alt="Gallery"/></a>
                             </div>
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-4.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-4.jpg" alt="Gallery"/></a>
                             </div>
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-3.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-3.jpg" alt="Gallery"/></a>
                             </div>
                             <div class="gallery-item">
-                                <a href="#"><img src="assets2/img/gallery-img-2.jpg" alt="Gallery"/></a>
+                                <a href="#"><img src="../assets2/img/gallery-img-2.jpg" alt="Gallery"/></a>
                             </div>
                         </div>
                     </div>
