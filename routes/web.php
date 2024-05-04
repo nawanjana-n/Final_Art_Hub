@@ -7,6 +7,9 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Backend\CategoryTypeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\InquiriesController;
+
 use Illuminate\Http\Request;
 
 
@@ -39,14 +42,25 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('shop', [ProductsController::class, 'index'])->name('shop');
-Route::get('/contact', function () {return view('contact');})->name('contact');
+// Route::get('/contact', function () {return view('contact');})->name('contact');
 Route::get('/about', function () {
-    return view('about');
-})->name('about');
+    return view('about'); })->name('about');
 
 
+Route::get('/contact', [InquiriesController::class, 'AllInquiries'])->name('contact');
+Route::post('/contact/form', [InquiriesController::class, 'InsertInquiries'])->name('contact.form');
+// Route::post('/update/status', [InquiriesController::class, 'updateStatus'])->name('update.status');
 
-Route::post('/contact/form', [ProductsController::class, 'InsertInquiries'])->name('contact.form');
+Route::put('/inquiry/{id}/update-status', [InquiriesController::class, 'updateStatus'])->name('update.status');
+
+Route::get('/product/{id}', [ProductsController::class, 'ProductsViews'])->name('product');
+
+// Route::controller(ProductsController::class)->group(function () {
+
+//     Route::get('/product-view', 'ProductViews')->name('product.view');
+
+
+// });
 
 
 
@@ -80,7 +94,7 @@ Route::middleware(['auth', 'role:client'])->group(function () {
     Route::get('/client/change/password', [ClientController::class, 'ClientChangePassword'])->name('client.change.password');
     Route::post('/client/update/password', [ClientController::class, 'ClientUpdatePassword'])->name('client.update.password');
     Route::view('/checkout', 'checkout')->name('checkout');
-    Route::view('/cart', 'cart')->name('cart');
+    // Route::view('/cart', 'cart')->name('cart');
 });
 
 
@@ -152,6 +166,22 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
         Route::get('/view/products/{id}', 'ViewProducts')->name('view.products');
         Route::post('/update/products', 'UpdateProducts')->name('update.products');
         Route::get('/delete/products/{id}', 'DeleteProducts')->name('delete.products');
+    });
+
+});
+
+
+Route::middleware(['auth', 'role:client'])->group(function () {
+
+    Route::controller(ClientController::class)->group(function () {
+
+
+
+    });
+
+    Route::controller(SalesController::class)->group(function () {
+        Route::get('/cart', 'CartView')->name('cart');
+        
     });
 
 });
