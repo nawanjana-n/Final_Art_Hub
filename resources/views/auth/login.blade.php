@@ -6,6 +6,7 @@
 
 <!--== Page Title Area Start ==-->
 <div id="page-title-area">
+   
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -21,6 +22,7 @@
     </div>
 </div>
 <!--== Page Title Area End ==-->
+
 
 <!--== Page Content Wrapper Start ==-->
 <div id="page-content-wrapper" class="p-9">
