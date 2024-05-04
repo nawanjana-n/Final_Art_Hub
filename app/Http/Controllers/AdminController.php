@@ -505,8 +505,9 @@ class AdminController extends Controller
 
     public function AdminInquiries()
     {
-        $admininquiries = InquiriesModel::orderBy('created_at', 'desc')->get();
-        return view('admin.inquiries', compact('admininquiries'));
+        $admininquiriess = InquiriesModel::where('status', 'new')->orderBy('created_at', 'desc')->get();
+
+        return view('admin.inquiries', compact('admininquiriess'));
     }
 
 }
