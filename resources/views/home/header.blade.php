@@ -42,7 +42,7 @@
             <!-- Logo Area Start -->
             <div class="col-3 col-lg-1 col-xl-2 m-auto">
                 <a href="{{url('/')}}" class="logo-area">
-                    <img src="assets2/img/logo.png" alt="Logo" class="img-fluid2"/>
+                    <img src="../assets2/img/logo.png" alt="Logo" class="img-fluid2"/>
                 </a>
             </div>
             <!-- Logo Area End -->
