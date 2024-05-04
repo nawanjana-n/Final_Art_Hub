@@ -2515,9 +2515,9 @@ address strong, address b {
     }
 }
 
-.single-product-page-content .product-thumbnail-wrap .owl-thumbs .owl-thumb-item.active {
+/* .single-product-page-content .product-thumbnail-wrap .owl-thumbs .owl-thumb-item.active {
     border: 2px solid #d82e2e;
-}
+} */
 
 .single-product-page-content .product-thumbnail-wrap .owl-thumbs .owl-thumb-item img {
     max-width: 100%;
