@@ -45,49 +45,17 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
+                                        <td class="pro-thumbnail"><a ><img class="img-fluid"
                                                     src="assets2/img/product-1.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a href="#">Zeon Zen 4 Pro</a></td>
+                                        <td class="pro-title"><a >Zeon Zen 4 Pro</a></td>
                                         <td class="pro-price"><span>$295.00</span></td>
                                         <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="1"></div>
+                                            <div class="pro-qty"><input type="text" value="1" disabled></div>
                                         </td>
                                         <td class="pro-subtotal"><span>$295.00</span></td>
                                         <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                                     </tr>
-                                    <tr>
-                                        <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
-                                                    src="assets2/img/product-2.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a href="#">Aquet Drone D 420</a></td>
-                                        <td class="pro-price"><span>$275.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="2"></div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$550.00</span></td>
-                                        <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
-                                                    src="assets2/img/product-3.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a href="#">Game Station X 22</a></td>
-                                        <td class="pro-price"><span>$295.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="1"></div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$295.00</span></td>
-                                        <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pro-thumbnail"><a href="#"><img class="img-fluid"
-                                                    src="assets2/img/product-4.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a href="#">Roxxe Headphone Z 75 </a></td>
-                                        <td class="pro-price"><span>$110.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="1"></div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$110.00</span></td>
-                                        <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
