@@ -31,6 +31,7 @@
                                     <th>Email</th>
                                     <th>Subject</th>
                                     <th>Message</th>
+                                    <th>Action</th>
 
 
 
@@ -38,7 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($admininquiries as $key => $item)
+                                @foreach ($admininquiriess as $key => $item)
                                     <tr>
 
                                         <td>{{ $key + 1 }}</td>
@@ -46,11 +47,23 @@
 
 
                                         <td>{{ $item->f_name }}</td>
-
-                                        <td>{{ $item->email }}</td>
+                                        <td><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></td>
                                         <td>{{ $item->subject }}</td>
                                         <td>{{ $item->message }}</td>
-
+                                        {{-- <td>  <a href="" class="btn btn-success">Checked</a> --}}
+                                            {{-- <td> <form action="{{ route('update.status') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $item->id }}">
+                                                <button type="submit" class="btn btn-success">Checked</button>
+                                            </form>
+                                        </td> --}}
+                                        <td>
+                                            <form action="{{ route('update.status', ['id' => $item->id]) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit" class="btn btn-success">Checked</button>
+                                            </form>
+                                        </td>
 
                                     </tr>
                                 @endforeach
