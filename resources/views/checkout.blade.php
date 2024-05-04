@@ -123,23 +123,15 @@
 
                                     <tbody>
                                     <tr>
-                                        <td><a href="single-product.html">Suscipit Vestibulum <strong> × 1</strong></a></td>
-                                        <td>$165.00</td>
+                                        <td><a >Suscipit Vestibulum <strong> × 1</strong></a></td>
+                                        <td>$ 165.00</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="single-product.html">Ami Vestibulum suscipit <strong> × 4</strong></a>
-                                        </td>
-                                        <td>$165.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="single-product.html">Vestibulum suscipit <strong> × 2</strong></a></td>
-                                        <td>$165.00</td>
-                                    </tr>
+
                                     </tbody>
                                     <tfoot>
                                     <tr>
                                         <td>Sub Total</td>
-                                        <td><strong>$495</strong></td>
+                                        <td><strong>$ 165</strong></td>
                                     </tr>
 
                                     <tr>
@@ -148,7 +140,7 @@
                                     </tr>
                                     <tr>
                                         <td>Total Amount</td>
-                                        <td><strong>$515</strong></td>
+                                        <td><strong>$ 185</strong></td>
                                     </tr>
                                     </tfoot>
                                 </table>
