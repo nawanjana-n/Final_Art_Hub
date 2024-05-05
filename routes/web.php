@@ -185,6 +185,7 @@ Route::middleware(['auth', 'role:client'])->group(function () {
         Route::get('/delete/cart/{id}', 'DeleteCart')->name('delete.cart');
 
         Route::get('/checkout', 'CheckoutView')->name('checkout');
+        Route::post('/cart/update','CheckoutAdd')->name('checkout.update');
 
     });
 

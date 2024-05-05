@@ -81,4 +81,47 @@ class SalesController extends Controller
         return redirect()->route('cart');
     }
 
+
+    public function CheckoutAdd(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|digits_between:2,15',
+            'address' => 'required|string|max:255',
+            'town' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'zip' => 'required|string|max:10',
+            'country' => 'required|string',
+            'order_note' => 'nullable|string',
+
+        ]);
+
+        // Retrieve all cart items for the authenticated user
+        // $cartItems = CartModel::where('customer_id', auth()->id())->get();
+        $carts = SalesModel::where('customer_id', auth()->id())
+            ->where('cart_status', 'pending')
+            ->get();
+
+        // Update each cart item with the new data
+        foreach ($carts as $item) {
+            $item->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'town' => $request->town,
+                'state' => $request->state,
+                'zip' => $request->zip,
+                'country' => $request->country,
+                'order_note' => $request->order_note,
+
+                'cart_status' => 'bought',
+            ]);
+
+            
+
+        }
+        return redirect()->route('cart');
+    }
 }

@@ -36,12 +36,13 @@
                         <div class="checkout-billing-details-wrap">
                             <h2>Billing Details</h2>
                             <div class="billing-form-wrap">
-                                <form action="#">
+                                <form action="{{route('checkout.update')}}" method="POST">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="single-input-item">
                                                 <label for="f_name" class="required">Name</label>
-                                                <input type="text" id="f_name" value="{{ Auth::user()->name }}"
+                                                <input type="text" name="name" value="{{ Auth::user()->name }}"
                                                     required />
                                             </div>
                                         </div>
@@ -51,7 +52,7 @@
 
                                     <div class="single-input-item">
                                         <label for="email" class="required">Email Address</label>
-                                        <input type="email" id="email" value="{{ Auth::user()->email }}" required />
+                                        <input type="email" name="email" value="{{ Auth::user()->email }}" required />
                                     </div>
 
 
@@ -59,7 +60,7 @@
                                     <div class="single-input-item">
                                         <label for="country" class="required">Country</label>
                                         <select name="country" id="country" required>
-                                            <option value="Bangladesh">Sri Lanka</option>
+                                            <option value="Sri Lanka">Sri Lanka</option>
                                             <option value="India">India</option>
                                             <option value="England">England</option>
                                             <option value="London">London</option>
@@ -68,29 +69,29 @@
 
                                     <div class="single-input-item">
                                         <label for="street-address" class="required">Address</label>
-                                        <input type="text" id="street-address" value="Address" required />
+                                        <input type="text" name="address" value="Address" required />
                                     </div>
 
 
 
                                     <div class="single-input-item">
                                         <label for="town" class="required">Town / City</label>
-                                        <input type="text" id="town" value="Town / City" required />
+                                        <input type="text" name="town" value="Towf" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="state">State / Province</label>
-                                        <input type="text" id="state" value="State / Province" required />
+                                        <input type="text" name="state" value="Statef" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="postcode" class="required">Postcode / ZIP</label>
-                                        <input type="text" id="postcode" value="Postcode / ZIP" required />
+                                        <input type="text" name="zip" value="3553" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="phone">Phone</label>
-                                        <input type="text" id="phone" value="{{ Auth::user()->phone }}" required />
+                                        <input type="text" name="phone" value="{{ Auth::user()->phone }}4455333" required />
                                     </div>
 
 
@@ -99,8 +100,8 @@
 
                                     <div class="single-input-item">
                                         <label for="ordernote">Order Note</label>
-                                        <textarea name="ordernote" id="ordernote" cols="30" rows="3"
-                                            placeholder="Notes about your order, e.g. special notes for delivery.">vxvc</textarea>
+                                        <textarea name="order_note"  cols="30" rows="3"
+                                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                                     </div>
 
                             </div>
@@ -128,6 +129,7 @@
                                                     <td><a>{{ $item->p_name }} <strong> × {{ $item->quantity }}</strong></a>
                                                     </td>
                                                     <td>$ {{ $item->total_price }}</td>
+                                                    <input name="id" type="hidden" value="{{ $item->id }}"></input>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -193,10 +195,10 @@
                                                 required />
                                             <label class="custom-control-label" for="terms">I have read and agree to
                                                 the website
-                                                <a href="index.html">terms and conditions.</a></label>
+                                                <a >terms and conditions.</a></label>
                                         </div>
 
-                                        <button type="submit" class="btn-add-to-cart"> Place Order</button>
+                                        <button type="submit" class="btn-add-to-cart">Place Order</button>
                                     </div>
                                 </div>
                             </div>
