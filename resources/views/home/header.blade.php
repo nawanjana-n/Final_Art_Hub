@@ -77,7 +77,7 @@
             <div class="col-6 col-lg-2 m-auto">
                 <div class="header-right-meta text-right">
                     <ul>
-                        <li><a href="#" class="modal-active"><i class="fa fa-search"></i></a></li>
+                        {{-- <li><a href="#" class="modal-active"><i class="fa fa-search"></i></a></li> --}}
                         <li class="settings"><a ><i class="fa fa-user"></i></a>
                             <div class="site-settings d-block d-sm-flex">
 
@@ -125,7 +125,7 @@
 <!--== Header Area End ==-->
 
 <!--== Search Box Area Start ==-->
-<div class="body-popup-modal-area">
+{{-- <div class="body-popup-modal-area">
     <span class="modal-close"><img src="assets2/img/cancel.png" alt="Close" class="img-fluid"/></span>
     <div class="modal-container d-flex">
         <div class="search-box-area">
@@ -137,7 +137,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!--== Search Box Area End ==-->
 <!--== Banner // Slider Area Start ==-->
 
