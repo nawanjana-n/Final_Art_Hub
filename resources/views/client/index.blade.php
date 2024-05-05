@@ -6,11 +6,12 @@
 
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
+        <div class="min-height-200px">
         <div class="title pb-20">
             <h2 class="h3 mb-0">Art Trade</h2>
         </div>
 
-        <div class="row pb-10">
+        {{-- <div class="row pb-10">
             <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
@@ -81,13 +82,56 @@
                 </div>
             </div>
         </div>
+ --}}
 
+ <div class="card-box mb-30">
 
-        
+    <div class="pb-20">
+        <table class="table hover multiple-select-row data-table-export nowrap"><br>
+            <thead>
+                <tr>
 
+                    <th>ID</th>
+
+                    <th>Product Name</th>
+
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($allorders as $key => $item)
+                    <tr>
+
+                        <td>{{ $key + 1 }}</td>
+
+                        <td>{{ $item->p_name }}</td>
+                        <td>{{ $item->quantity }}</td>
+                        <td>{{ $item->total_price }}</td>
+                        <td>
+                            @if ($item->delivery_status == 'pending')
+                                <span class="badge badge-danger" style="font-size: 0.8rem;">Not
+                                    Shipped</span>
+                            @elseif($item->delivery_status == 'shipped')
+                                <span class="badge badge-warning" style="font-size: 0.8rem;">Shipped</span>
+                            @else
+                                <span class="badge badge-success" style="font-size: 0.8rem;">Received</span>
+                            @endif
+                        </td>
+
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 
+
+    </div>
+</div>
+</div>
 
 
 

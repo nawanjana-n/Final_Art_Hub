@@ -21,7 +21,7 @@
                 <div class="card-box mb-30">
 
                     <div class="pb-20">
-                        <table class="table hover multiple-select-row data-table-export nowrap">
+                        <table class="table hover multiple-select-row data-table-export nowrap"><br>
                             <thead>
                                 <tr>
 
@@ -58,7 +58,7 @@
                                         <td>
                                             @if ($item->delivery_status == 'shipped')
                                                 <a href="{{ route('edit.orders', $item->id) }}" class="btn btn-warning">Edit</a>
-                               
+
                                             @endif
                                         </td>
                                     </tr>

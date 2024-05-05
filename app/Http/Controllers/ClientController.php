@@ -14,7 +14,15 @@ class ClientController extends Controller
     public function ClientDashboard()
     {
 
-        return view('client.index');
+        $userId = Auth::id();
+
+        // Retrieve products created by the currently authenticated user
+        $allorders = SalesModel::where('customer_id', $userId)
+            ->where('cart_status','bought')
+            ->where('delivery_status','pending')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('client.index',compact('allorders'));
     }//End Method
 
 
