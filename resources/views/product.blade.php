@@ -39,7 +39,8 @@
                                         @endphp
                                         <div class="single-thumb-item">
                                             <a href="single-product.html"><img class="img-fluid"
-                                                    src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}" alt="Product" /></a>
+                                                    src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
+                                                    alt="Product" /></a>
                                         </div>
                                         @if (!empty($imagePaths))
                                             @foreach ($imagePaths as $path)
@@ -47,7 +48,6 @@
                                                     <a href="single-product.html"><img class="img-fluid"
                                                             src="{{ asset($path) }}" alt="Product" /></a>
                                                 </div>
-
                                             @endforeach
                                         @endif
 
@@ -73,48 +73,36 @@
                                     </div>
 
                                     <p class="products-desc">{{ $product->description }}</p>
+                                    <form action="{{ route('cart.add') }}" method="POST">
+                                        @csrf
+                                        <input type="" name="seller_id" value="{{ $product->seller_id }}">
+                                        <input type="" name="p_name" value="{{ $product->name }}">
+                                        <input type="" name="product_id" value="{{ $product->id }}">
+                                        <input type="" name="image" value="{{ $product->main_photo }}">
+                                        <input type="" name="price" id="price" value="{{ $product->price }}">
+                                        <input type="" name="total_price" id="total_price"
+                                            value="{{ $product->price }}">
 
-                                    <div class="product-quantity mt-5 d-flex align-items-center">
-                                        <div class="quantity-field">
-                                            <label for="qty">Qty</label>
-                                            <input type="number" id="qty" min="1" max="100"
-                                                value="1" />
+                                        <input type="" name="shipping_fee" id="shipping_fee" >
+
+
+
+                                        <div class="product-quantity mt-5 d-flex align-items-center">
+                                            <div class="quantity-field">
+                                                <label for="qty">Qty</label>
+                                                <input type="number" id="qty" min="1" max="100"
+                                                    value="1" name="quantity" oninput="calculateTotal()" />
+                                            </div>
+                                            <button type="submit" class="btn btn-add-to-cart"
+                                                style="background-color: rgb(0, 0, 0); color: white;">Add to Cart</button>
                                         </div>
-
-                                        <a href="single-product.html" class="btn btn-add-to-cart">Add to Cart</a>
-                                    </div>
-
+                                    </form>
                                 </div>
                             </div>
                             <!-- Product Details End -->
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!-- Product Full Description Start -->
-                                <div class="product-full-info-reviews">
-                                    <!-- Single Product tab Menu -->
-                                    <nav class="nav" id="nav-tab">
-                                        <a class="active" id="description-tab" data-toggle="tab"
-                                            href="#description">Description</a>
-                                    </nav>
-                                    <!-- Single Product tab Menu -->
 
-                                    <!-- Single Product tab Content -->
-                                    <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="description">
-                                            <p>{{ $product->description }}</p>
-
-
-                                        </div>
-
-
-                                    </div>
-                                    <!-- Single Product tab Content -->
-                                </div>
-                                <!-- Product Full Description End -->
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Single Product Page Content End -->
@@ -142,4 +130,44 @@
 
     <!--=== Active Js ===-->
     <script src="{{ asset('../assets2/js/active.js') }}"></script>
+
+    {{-- <script>
+        // Function to calculate total price
+        function calculateTotal() {
+            // Get the price and quantity values
+            var price = parseFloat(document.getElementById('price').value);
+            var quantity = parseInt(document.getElementById('qty').value);
+
+            // Calculate the total price
+            var totalPrice = price * quantity;
+
+            // Display the total price
+            document.getElementById('total_price').value = totalPrice.toFixed(2); // Assuming 2 decimal places
+        }
+    </script> --}}
+
+    <script>
+        // Function to calculate total price and shipping fee
+        function calculateTotal() {
+            // Get the price and quantity values
+            var price = parseFloat(document.getElementById('price').value);
+            var quantity = parseInt(document.getElementById('qty').value);
+
+            // Calculate the total price
+            var totalPrice = price * quantity;
+
+            // Calculate the shipping fee (5% of the total price)
+            var shippingFee = totalPrice * 0.05;
+
+            // Update the shipping fee field
+            document.getElementById('shipping_fee').value = shippingFee.toFixed(2); // Assuming 2 decimal places
+
+            // Update the total price field
+            var totalPriceWithShipping = totalPrice + shippingFee;
+            document.getElementById('total_price').value = totalPriceWithShipping.toFixed(2); // Assuming 2 decimal places
+        }
+
+        // Initial calculation
+        calculateTotal();
+    </script>
 @endsection
