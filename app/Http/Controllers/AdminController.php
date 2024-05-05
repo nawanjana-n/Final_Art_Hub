@@ -139,17 +139,6 @@ class AdminController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     //////////////Admin User All Method///////////
 
 
@@ -204,6 +193,7 @@ class AdminController extends Controller
         return redirect()->route('all.admin')->with($notification);
     }
 
+    
     public function EditAdmin($id)
     {
         $user = User::findOrFail($id);
@@ -211,6 +201,8 @@ class AdminController extends Controller
         $statuss = User::distinct()->pluck('status'); // Fetch unique status values from the users table
         return view('admin.backend.pages.admin.edit_admin', compact('user', 'roles', 'statuss'));
     }
+
+
     public function UpdateAdmin(Request $request, $id)
     {
         // Validate the request data
@@ -264,16 +256,6 @@ class AdminController extends Controller
 
         return redirect()->back()->with($notification);
     }
-
-
-
-
-
-
-
-
-
-
 
 
 

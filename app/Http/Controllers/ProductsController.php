@@ -18,7 +18,8 @@ class ProductsController extends Controller
 
         // Retrieve products created by the currently authenticated user
         $types = ProductsModel::where('seller_id', $userId)
-            ->orderBy('created_at', 'desc')->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return view('seller.backend.products.all_products', compact('types'));
     } // End Method

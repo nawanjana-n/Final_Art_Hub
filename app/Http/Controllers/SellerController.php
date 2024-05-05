@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SalesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -97,5 +98,60 @@ class SellerController extends Controller
         return back()->with($notification);
     }
 
+    public function AllSales()
+    {
+
+
+        $userId = Auth::id();
+
+        // Retrieve products created by the currently authenticated user
+        $allsale = SalesModel::where('seller_id', $userId)
+            ->where('cart_status','bought')
+            ->where('delivery_status','pending')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('seller.backend.sales.all_sales',compact('allsale'));
+    }
+
+
+    public function EditSale($id)
+    {
+        $sales = SalesModel::findOrFail($id);
+        if ($sales->seller_id != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to Edit this Sale.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('all.sales')->with($notification);
+        }
+        return view('seller.backend.sales.edit_sales', compact('sales'));
+
+    } // End Method
+
+    public function UpdateSales(Request $request)
+    {
+        $pid = $request->id;
+        $sales = SalesModel::findOrFail($pid);
+
+
+        // Update other fields
+        $sales->delivery_status = $request->delivery_status;
+
+
+
+        // Save the changes to the database
+        $sales->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Products Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.sales')->with($notification);
+    }
 
 }

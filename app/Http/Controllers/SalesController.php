@@ -129,4 +129,7 @@ class SalesController extends Controller
         }
         return redirect()->route('cart');
     }
+
+
+   
 }

@@ -20,7 +20,12 @@
 
                 <li>
                     <a href="{{route('all.products')}}" class="dropdown-toggle no-arrow {{ Route::is('all.products') ? 'active' : '' }}">
-                        <span class="micon bi bi-house"></span><span class="mtext">Products</span>
+                        <span class="micon bi bi-grid"></span><span class="mtext">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('all.sales')}}" class="dropdown-toggle no-arrow {{ Route::is('all.sales') ? 'active' : '' }}">
+                        <span class="micon bi bi-list"></span><span class="mtext">Sales</span>
                     </a>
                 </li>
 

@@ -14,41 +14,42 @@
 
                         <li>
                             <a href="{{route('client.dashboard')}}" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-diagram-3"></span><span class="mtext">Home</span>
+                                <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-diagram-3"></span><span class="mtext">About</span>
+                            <a href="{{route('all.orders')}}" class="dropdown-toggle no-arrow">
+                                <span class="micon bi bi-list"></span><span class="mtext">My Orders</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Artists</span>
+                            <a href="{{route('shop')}}" class="dropdown-toggle no-arrow">
+                                <span class="micon bi bi-bag"></span><span class="mtext">Shop Now</span>
                             </a>
                         </li>
                         <li>
+                            <a href="{{route('cart')}}" class="dropdown-toggle no-arrow">
+                                <span class="micon bi bi-cart"></span><span class="mtext">My Cart</span>
+                            </a>
+                        </li>
+                        {{-- <li>
                             <a href="#" class="dropdown-toggle no-arrow">
                                 <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Art Works</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Contact</span>
+                            <a href="{{route('contact')}}" class="dropdown-toggle no-arrow">
+                                <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Contact Us</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Help and Support</span>
+                                <span class="micon bi bi-chat-dots"></span><span class="mtext">Help and Support</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-calendar4-week"></span><span class="mtext">Calendar</span>
-                            </a>
-                        </li>
+
                         <li>
                             <a href="#" class="dropdown-toggle no-arrow">
                                 <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Legal Information</span>

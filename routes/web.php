@@ -168,13 +168,24 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
         Route::get('/delete/products/{id}', 'DeleteProducts')->name('delete.products');
     });
 
+
+    Route::controller(SellerController::class)->group(function () {
+        Route::get('/all/sales', 'AllSales')->name('all.sales');
+        Route::get('/edit/sales/{id}', 'EditSale')->name('edit.sales');
+        Route::post('/update/sales', 'UpdateSales')->name('update.sales');
+
+
+    });
+
 });
 
 
 Route::middleware(['auth', 'role:client'])->group(function () {
 
     Route::controller(ClientController::class)->group(function () {
-
+        Route::get('/all/orders', 'AllOrders')->name('all.orders');
+        Route::get('/edit/orders/{id}', 'EditOrders')->name('edit.orders');
+        Route::post('/update/orders', 'UpdateOrders')->name('update.orders');
 
 
     });
