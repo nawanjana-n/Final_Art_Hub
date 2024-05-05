@@ -14,7 +14,7 @@
                         <div class="page-title-content">
                             <h1>Shopping Cart</h1>
                             <ul class="breadcrumb">
-                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="cart.html" class="active">Cart</a></li>
                             </ul>
                         </div>
@@ -44,18 +44,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="pro-thumbnail"><a ><img class="img-fluid"
-                                                    src="assets2/img/product-1.jpg" alt="Product" /></a></td>
-                                        <td class="pro-title"><a >Zeon Zen 4 Pro</a></td>
-                                        <td class="pro-price"><span>$295.00</span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="1" disabled></div>
-                                        </td>
-                                        <td class="pro-subtotal"><span>$295.00</span></td>
-                                        <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                                    </tr>
-
+                                    @foreach ($carts as $item)
+                                        <tr>
+                                            <td class="pro-thumbnail"><a><img class="img-fluid"
+                                                        src="{{ !empty($item->image) ? url('upload/product_main_image/' . $item->image) : url('upload/no_image.jpg') }}"
+                                                        alt="Product" /></a></td>
+                                            <td class="pro-title"><a>{{ $item->p_name }}</a></td>
+                                            <td class="pro-price"><span>${{ $item->price }}</span></td>
+                                            <td class="pro-quantity">
+                                                <div class="pro-qty"><input type="text" value="{{ $item->quantity }}"
+                                                        disabled></div>
+                                            </td>
+                                            <td class="pro-subtotal"><span>${{ $item->total_price }} </span></td>
+                                            <td style="display: none"><input type="hidden" value="{{ $item->id }}">
+                                            </td>
+                                            <td class="pro-remove"><a href="{{ route('delete.cart', $item->id) }}"><i
+                                                        class="fa fa-trash-o"></i></a></td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -71,22 +77,19 @@
                             <div class="cart-calculate-items">
                                 <div class="table-responsive">
                                     <table class="table table-bordered">
+
                                         <tr>
-                                            <td>Sub Total</td>
-                                            <td>$230</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping</td>
-                                            <td>$70</td>
+                                            <td>Shipping <span style="font-size: 10px">(Already Added)</span></td>
+                                            <td>+5%</td>
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td class="total-amount">$300</td>
+                                            <td class="total-amount">$ {{ $totalPrice }}</td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <a href="{{route('checkout')}}" class="btn-add-to-cart">Proceed To Checkout</a>
+                            <a href="{{ route('checkout') }}" class="btn-add-to-cart">Proceed To Checkout</a>
                         </div>
                     </div>
                 </div>
