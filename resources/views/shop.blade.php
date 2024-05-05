@@ -44,12 +44,11 @@
                                                     </figure>
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a></h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
                                                         <p class="products-desc">{{ $product->description }}</p>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
 
                                                     </div>
 
