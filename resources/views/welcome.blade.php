@@ -136,18 +136,19 @@
                                             @if ($product->category_id == 6)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -170,18 +171,19 @@
                                             @if ($product->category_id == 5)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -201,18 +203,19 @@
                                             @if ($product->category_id == 4)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -235,18 +238,19 @@
                                             @if ($product->category_id == 2)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -267,18 +271,19 @@
                                             @if ($product->category_id == 1)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -299,18 +304,19 @@
                                             @if ($product->category_id == 3)
                                                 <div class="col-md-12 single-product-item text-center">
                                                     <figure class="product-thumb">
-                                                        <a href="#"><img
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                                 alt="Products" class="img-fluid3"></a>
                                                     </figure>
 
 
                                                     <div class="product-details">
-                                                        <h2><a href="#">{{ $product->name }}</a></h2>
+                                                        <h2><a
+                                                                href="{{ route('product', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                        </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="#" class="btn btn-add-to-cart">+ Add to
-                                                            Cart</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -346,9 +352,10 @@
                                         <div class="">
                                             <div class="single-cat-item">
                                                 <figure class="category-thumb">
-                                                    <a href="#">
+                                                    <a href="">
                                                         <img src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
-                                                            alt="{{ $category->category_name }}" class="img-fluidd" /></a>
+                                                            alt="{{ $category->category_name }}"
+                                                            class="img-fluidd" /></a>
 
                                                     <figcaption class="category-name">
                                                         <a href="#">{{ $category->category_name }}</a>
@@ -392,18 +399,19 @@
                             @foreach ($products as $product)
                                 <div class="col-md-12 single-product-item text-center">
                                     <figure class="product-thumb">
-                                        <a href="#"><img
+                                        <a href="{{ route('product', ['id' => $product->id]) }}"><img
                                                 src="{{ !empty($product->main_photo) ? url('upload/product_main_image/' . $product->main_photo) : url('upload/no_image.jpg') }}"
                                                 alt="Products" class="img-fluid4"></a>
                                     </figure>
 
                                     <div class="product-details">
-                                        <h2><a href="#"
+                                        <h2><a href="{{ route('product', ['id' => $product->id]) }}"
                                                 style="font-weight: bold; font-size: 1.5rem;">{{ $product->name }}</a>
                                         </h2>
 
                                         <span class="price">$ {{ $product->price }}</span>
-                                        <a href="#" class="btn btn-add-to-cart">+ Add to Cart</a>
+                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                            class="btn btn-add-to-cart">View</a>
                                         <span class="product-bedge">New</span>
                                     </div>
 
@@ -549,6 +557,6 @@
         </div>
     </section> --}}
     <!--== Blog Area End ==-->
-    
+
 
 @endsection
