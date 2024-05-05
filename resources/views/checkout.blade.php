@@ -69,29 +69,29 @@
 
                                     <div class="single-input-item">
                                         <label for="street-address" class="required">Address</label>
-                                        <input type="text" name="address" value="Address" required />
+                                        <input type="text" name="address" placeholder="Address" required />
                                     </div>
 
 
 
                                     <div class="single-input-item">
                                         <label for="town" class="required">Town / City</label>
-                                        <input type="text" name="town" value="Towf" required />
+                                        <input type="text" name="town" placeholder="Town" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="state">State / Province</label>
-                                        <input type="text" name="state" value="Statef" required />
+                                        <input type="text" name="state" placeholder="State / Province" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="postcode" class="required">Postcode / ZIP</label>
-                                        <input type="text" name="zip" value="3553" required />
+                                        <input type="text" name="zip" placeholder="ZIP Code" required />
                                     </div>
 
                                     <div class="single-input-item">
                                         <label for="phone">Phone</label>
-                                        <input type="text" name="phone" value="{{ Auth::user()->phone }}4455333" required />
+                                        <input type="text" name="phone" value="{{ Auth::user()->phone }}" required />
                                     </div>
 
 
@@ -159,13 +159,13 @@
 
                                             <div class="single-input-item">
                                                 <label for="c_name" class="required">Card Holder Name</label>
-                                                <input type="text" id="c_name" value="Enter Card holder Name" />
+                                                <input type="text" id="c_name" placeholder="Enter Card holder Name" required/>
                                             </div>
 
 
                                             <div class="single-input-item">
                                                 <label for="c_number" class="required">Card Number</label>
-                                                <input type="text" id="c_number" value="0000000" />
+                                                <input type="text" id="c_number" placeholder="0000000" required/>
                                             </div>
 
 
@@ -174,12 +174,12 @@
 
                                             <div class="single-input-item">
                                                 <label for="e-date" class="required">Expiry Date</label>
-                                                <input type="text" id="e-date" placeholder="MM/YY" />
+                                                <input type="text" id="e-date" placeholder="MM/YY" required/>
                                             </div>
 
                                             <div class="single-input-item">
                                                 <label for="cvc" class="required">CVC</label>
-                                                <input type="number" id="cvc" placeholder="000" />
+                                                <input type="number" id="cvc" placeholder="000" required/>
                                             </div>
 
 

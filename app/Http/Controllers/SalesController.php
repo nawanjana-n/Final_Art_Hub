@@ -18,7 +18,7 @@ class SalesController extends Controller
         $cartItems = SalesModel::all();
 
         // Calculate total price
-        $totalPrice = $cartItems->sum('total_price');
+        $totalPrice = $cartItems->where('cart_status', 'pending')->sum('total_price');
 
         // Retrieve products created by the currently authenticated user
         $carts = SalesModel::where('customer_id', $userId)
@@ -31,19 +31,24 @@ class SalesController extends Controller
 
     public function CheckoutView()
     {
+
         // Retrieve the currently authenticated user's ID
         $userId = Auth::id();
         // Retrieve cart items
         $checkoutItems = SalesModel::all();
 
         // Calculate total price
-        $totalPrice = $checkoutItems->sum('total_price');
+        $totalPrice = $checkoutItems->where('cart_status', 'pending')->sum('total_price');
 
         // Retrieve products created by the currently authenticated user
         $checkouts = SalesModel::where('customer_id', $userId)
             ->where('cart_status', 'pending')
             ->orderBy('created_at', 'desc')
             ->get();
+
+        if ($checkouts->isEmpty()) {
+            return redirect()->route('shop');
+        }
 
         return view('checkout', compact('checkouts', 'totalPrice'));
     }
@@ -119,7 +124,7 @@ class SalesController extends Controller
                 'cart_status' => 'bought',
             ]);
 
-            
+
 
         }
         return redirect()->route('cart');
