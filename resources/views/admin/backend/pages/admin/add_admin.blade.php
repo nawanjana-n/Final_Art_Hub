@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="footer-wrap pd-20 mb-20 card-box mt-4">
-                Art Trade
+                Art Trade Hub
                 <a href="https://github.com/dropways" target="_blank">Nuwandi Nawanjana</a>
             </div>
         </div>

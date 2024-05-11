@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>@yield('pageTitle') - Art Trade Hub</title>
 
-
+    <link rel="shortcut icon" href="{{ asset('assets2/img/logo.png') }}" />
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />

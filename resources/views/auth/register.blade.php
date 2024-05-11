@@ -32,7 +32,7 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
-                            <h2 class="text-center text-primary">Login To Art Trade</h2>
+                            <h2 class="text-center text-primary">Login To Art Trade Hub</h2>
                         </div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf

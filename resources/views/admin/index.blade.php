@@ -5,7 +5,7 @@
     <div class="main-container">
         <div class="xs-pd-20-10 pd-ltr-20">
             <div class="title pb-20">
-                <h2 class="h3 mb-0">Art Trade</h2>
+                <h2 class="h3 mb-0">Art Trade Hub</h2>
             </div>
 
 
@@ -117,7 +117,7 @@
 
 
         </div>
-        <br ><br ><br ><br ><br ><br ><br ><br ><br ><br ><br ><br ><br ><br ><br >
+        <br ><br ><br ><br ><br >
         @include('admin.body.footer')
 
     </div>

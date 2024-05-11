@@ -8,7 +8,7 @@
     <meta name="description" content="meta description">
 
     <title>@yield('pageTitle') - Art Trade Hub</title>
-
+    <link rel="shortcut icon" href="{{ asset('assets2/img/logo.png') }}" />
     <!--=== Favicon ===-->
 
     <!--== Google Fonts ==-->

@@ -1,7 +1,7 @@
 <div class="left-side-bar">
 			<div class="brand-logo">
-				<a href="{{url('/')}}" style="color: rgb(13, 79, 233); font-weight: bold;">
-                    Art Trade
+				<a href="{{url('/')}}" style=" justify-content: center;" >
+                    <img src="../assets2/img/logo2.png" alt=""  class="img-fluid2 p-2">
 
                 </a>
 				<div class="close-sidebar" data-toggle="left-sidebar-close">
@@ -43,7 +43,7 @@
                                 <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Contact Us</span>
                             </a>
                         </li>
-                     
+
                         <li>
                             <a href="{{route('client.zoom.list')}}" class="dropdown-toggle no-arrow">
                                 <span class="micon bi bi-chat-dots"></span><span class="mtext">Zoom Meeting Request</span>

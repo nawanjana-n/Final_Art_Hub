@@ -147,7 +147,7 @@
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <div class="copyright-text">
-                                <p><a target="_blank" href="#" style="color: rgb(0, 123, 255); font-weight: bold; font-style:normal;">Nuwandi Nawanjana</a></p>
+                                <p><a target="_blank" href="https://github.com/nawanjana-n/Final_Art_Hub" style="color: rgb(0, 0, 0); font-weight: bold; font-style:normal; font-family: Open-sans">Developed by Nuwandi Nawanjana</a></p>
                             </div>
                         </div>
                     </div>
