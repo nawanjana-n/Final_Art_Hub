@@ -19,7 +19,7 @@
 
                 <!-- Export Datatable start -->
                 <div class="card-box mb-30">
-
+<br>
                     <div class="pb-20">
                         <table class="table hover multiple-select-row data-table-export nowrap">
                             <thead>
@@ -47,10 +47,16 @@
                                         <td>{{ $item->phone }}</td>
                                         {{-- <td>{{ optional($item->category)->category_name ?: 'N/A' }}</td> --}}
 
+                                      
                                         <td>
+                                            @if ($item->zoom_status == 'need')
+
+                                            <a href="{{ route('all.meetings') }}"
+                                                class="btn btn-info">Meeting List</a>
+                                            @else
                                             <a href="{{ route('edit.sales', $item->id) }}"
                                                 class="btn btn-warning">Edit</a>
-
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
