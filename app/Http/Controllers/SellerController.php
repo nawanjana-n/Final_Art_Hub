@@ -18,8 +18,22 @@ class SellerController extends Controller
 
         // Count all products added by the user regardless of their status
         $total_products_added_by_user = ProductsModel::where('seller_id', $user_id)->count();
+        $pending_orders = SalesModel::where('cart_status', 'bought')
+            ->where('delivery_status', 'pending')
+            ->where('seller_id', $user_id)
+            ->count();
 
-        return view('seller.index',compact('total_products_added_by_user'));
+        $all_orders = SalesModel::where('cart_status', 'bought')
+            ->where('seller_id', $user_id)
+            ->count();
+
+        $totalPrice = SalesModel::whereIn('delivery_status', ['shipped', 'received'])
+            ->where('cart_status', 'bought')
+            ->where('seller_id', $user_id)
+            ->sum('total_price');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+        return view('seller.index', compact('total_products_added_by_user', 'pending_orders', 'all_orders','formattedPrice'));
     }
 
     public function SellerLogout(Request $request)
@@ -106,12 +120,12 @@ class SellerController extends Controller
 
         // Retrieve products created by the currently authenticated user
         $allsale = SalesModel::where('seller_id', $userId)
-            ->where('cart_status','bought')
-            ->where('delivery_status','pending')
+            ->where('cart_status', 'bought')
+            ->where('delivery_status', 'pending')
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('seller.backend.sales.all_sales',compact('allsale'));
+        return view('seller.backend.sales.all_sales', compact('allsale'));
     }
 
 
@@ -153,5 +167,76 @@ class SellerController extends Controller
 
         return redirect()->route('all.sales')->with($notification);
     }
+
+    public function SellerMeetingList()
+    {
+        $userId = Auth::id();
+        // Retrieve cart items
+        $zoomItems = SalesModel::all();
+
+
+        // Retrieve products created by the currently authenticated user
+        $zooms = SalesModel::where('seller_id', $userId)
+            ->where('delivery_status', 'pending')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('seller.backend.zoom-meetings.all_meeting', compact('zooms'));
+    }
+
+    public function SellerMeetingConfirm($id)
+    {
+        $zooms = SalesModel::findOrFail($id);
+        if ($zooms->seller_id != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to confirm this meeting.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('all.meetings')->with($notification);
+        }
+        return view('seller.backend.zoom-meetings.confirm_req_meeting', compact('zooms'));
+
+    } // End Method
+
+    public function UpdateReq(Request $request)
+    {
+        $pid = $request->id;
+        $meetings = SalesModel::findOrFail($pid);
+
+
+        // Update other fields
+        $meetings->zoom_link = $request->zoom_link;
+        $meetings->zoom_time = $request->zoom_time;
+        $meetings->zoom_date = $request->zoom_date;
+
+
+
+        // Save the changes to the database
+        $meetings->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Meeting Confirmed',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.meetings')->with($notification);
+    }
+
+    public function zoomStatus($id)
+    {
+        $zoomStatus = SalesModel::find($id);
+
+        if ($zoomStatus) {
+
+            $zoomStatus->update(['zoom_status' => 'finished']);
+            return redirect()->back()->with('success', 'Your Messege Send');
+        }
+        return redirect()->back()->with('error', 'Your Message not sent');
+
+    }
+
 
 }
