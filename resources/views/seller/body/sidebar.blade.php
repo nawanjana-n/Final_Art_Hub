@@ -33,8 +33,8 @@
 
 
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-body-text"></span><span class="mtext">Content Management</span>
+                    <a href="{{route('all.meetings')}}" class="dropdown-toggle no-arrow {{ Route::is('all.meetings') ? 'active' : '' }}">
+                        <span class="micon bi bi-body-text"></span><span class="mtext">Meeting Management</span>
                     </a>
                 </li>
 
