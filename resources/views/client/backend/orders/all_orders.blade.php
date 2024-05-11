@@ -57,7 +57,7 @@
                                         </td>
                                         <td>
                                             @if ($item->delivery_status == 'shipped')
-                                                <a href="{{ route('edit.orders', $item->id) }}" class="btn btn-warning">Edit</a>
+                                                <a href="{{ route('edit.orders', $item->id) }}" class="btn btn-success">Confirm</a>
 
                                             @endif
                                         </td>
