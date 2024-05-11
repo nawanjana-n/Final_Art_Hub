@@ -175,6 +175,14 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
         Route::post('/update/sales', 'UpdateSales')->name('update.sales');
 
 
+        Route::get('/all/meeting', 'SellerMeetingList')->name('all.meetings');
+        Route::get('/confirm/req/{id}', 'SellerMeetingConfirm')->name('confirm.meetings');
+        Route::post('/update/req', 'UpdateReq')->name('update.req');
+
+        Route::put('/seller/{id}/zoom-status', 'zoomStatus')->name('seller.zoom.status');
+
+
+
     });
 
 });
@@ -197,6 +205,10 @@ Route::middleware(['auth', 'role:client'])->group(function () {
 
         Route::get('/checkout', 'CheckoutView')->name('checkout');
         Route::post('/cart/update','CheckoutAdd')->name('checkout.update');
+
+
+        Route::get('/client/zoom/list', 'ZoomList')->name('client.zoom.list');
+        Route::put('/client/{id}/zoom-status', 'zoomStatus')->name('zoom.update.status');
 
     });
 
