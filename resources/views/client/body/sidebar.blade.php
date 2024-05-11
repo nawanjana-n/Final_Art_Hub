@@ -43,16 +43,10 @@
                                 <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Contact Us</span>
                             </a>
                         </li>
+                     
                         <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-chat-dots"></span><span class="mtext">Help and Support</span>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="#" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-chat-right-dots"></span><span class="mtext">Legal Information</span>
+                            <a href="{{route('client.zoom.list')}}" class="dropdown-toggle no-arrow">
+                                <span class="micon bi bi-chat-dots"></span><span class="mtext">Zoom Meeting Request</span>
                             </a>
                         </li>
 
