@@ -130,6 +130,39 @@ class SalesController extends Controller
         return redirect()->route('cart');
     }
 
+    public function ZoomList()
+    {
+        // Retrieve the currently authenticated user's ID
+        $userId = Auth::id();
+        // Retrieve cart items
+        $zoomItems = SalesModel::all();
 
-   
+        // Calculate total price
+        // $totalPrice = $cartItems->where('cart_status', 'pending')->sum('total_price');
+
+        // Retrieve products created by the currently authenticated user
+        $zooms = SalesModel::where('customer_id', $userId)
+            ->where('delivery_status', 'pending')
+            ->whereIn('zoom_status', ['no', 'need'])
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('client.backend.zoom.all_zoom', compact('zooms'));
+    }
+
+
+    public function zoomStatus($id)
+    {
+        $zoomStatus = SalesModel::find($id);
+
+        if ($zoomStatus) {
+            
+            $zoomStatus->update(['zoom_status' => 'need']);
+            return redirect()->back()->with('success', 'Your Messege Send');
+        }
+        return redirect()->back()->with('error', 'Your Message not sent');
+
+    }
+
+
 }
