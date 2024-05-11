@@ -15,7 +15,7 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">75</div>
+                            <div class="weight-700 font-24 text-dark">{{ $pending_orders }}</div>
                             <div class="font-14 text-secondary weight-500">
                                 Pending Orders
                             </div>
@@ -49,7 +49,7 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">400+</div>
+                            <div class="weight-700 font-24 text-dark">{{ $all_orders }}</div>
                             <div class="font-14 text-secondary weight-500">
                                 All Orders
                             </div>
@@ -69,7 +69,7 @@
                 <div class="card-box height-100-p widget-style3">
                     <div class="d-flex flex-wrap">
                         <div class="widget-data">
-                            <div class="weight-700 font-24 text-dark">$50,000</div>
+                            <div class="weight-700 font-24 text-dark">{{ $formattedPrice }}</div>
                             <div class="font-14 text-secondary weight-500">Earning</div>
                         </div>
                         <div class="widget-icon">
