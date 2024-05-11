@@ -75,15 +75,15 @@
                                     <p class="products-desc">{{ $product->description }}</p>
                                     <form action="{{ route('cart.add') }}" method="POST">
                                         @csrf
-                                        <input type="" name="seller_id" value="{{ $product->seller_id }}">
-                                        <input type="" name="p_name" value="{{ $product->name }}">
-                                        <input type="" name="product_id" value="{{ $product->id }}">
-                                        <input type="" name="image" value="{{ $product->main_photo }}">
-                                        <input type="" name="price" id="price" value="{{ $product->price }}">
-                                        <input type="" name="total_price" id="total_price"
+                                        <input type="hidden" name="seller_id" value="{{ $product->seller_id }}">
+                                        <input type="hidden" name="p_name" value="{{ $product->name }}">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="hidden" name="image" value="{{ $product->main_photo }}">
+                                        <input type="hidden" name="price" id="price" value="{{ $product->price }}">
+                                        <input type="hidden" name="total_price" id="total_price"
                                             value="{{ $product->price }}">
 
-                                        <input type="" name="shipping_fee" id="shipping_fee" >
+                                        <input type="hidden" name="shipping_fee" id="shipping_fee" >
 
 
 
