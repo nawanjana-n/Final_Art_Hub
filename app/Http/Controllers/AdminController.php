@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SalesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -34,7 +35,13 @@ class AdminController extends Controller
 
         $total_products = ProductsModel::all()->count();
 
-        return view('admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers','total_products'));
+        $all_orders = SalesModel::where('cart_status', 'bought')
+            ->count();
+
+            $all_meetings = SalesModel::where('zoom_status', 'need')
+            ->count();
+
+        return view('admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers','total_products','all_orders','all_meetings'));
     } //End Method
 
     public function AdminLogout(Request $request)
@@ -193,7 +200,7 @@ class AdminController extends Controller
         return redirect()->route('all.admin')->with($notification);
     }
 
-    
+
     public function EditAdmin($id)
     {
         $user = User::findOrFail($id);
