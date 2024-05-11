@@ -57,9 +57,9 @@ class InquiriesController extends Controller
 
         if ($contactStatus) {
             $contactStatus->update(['status' => 'old']);
-            return redirect()->back()->with('success', 'fhghu');
+            return redirect()->back()->with('success', 'Your Messege Send');
         }
-        return redirect()->back()->with('error', 'dgfhgggddhu');
+        return redirect()->back()->with('error', 'Your Message not sent');
 
     }
 
