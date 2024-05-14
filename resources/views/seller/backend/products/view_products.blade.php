@@ -68,7 +68,7 @@
                                 <div class="product-detail-desc pd-20 card-box height-100-p">
                                     <h4 class="mb-20 pt-20">{{ $products->name }}</h4>
                                     <p>
-                                        {{ $products->description }}
+                                      {!! nl2br(e($products->description)) !!}
                                     </p>
 
                                     <div class="price">Price :<ins>$ {{ $products->price }}</ins></div>

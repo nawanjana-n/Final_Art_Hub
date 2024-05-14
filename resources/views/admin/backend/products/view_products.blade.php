@@ -69,7 +69,7 @@
 
                                     <h4 class="mb-20 pt-20">{{ $productsts->name }}</h4>
                                     <p>
-                                        {{ $productsts->description }}
+                                       {!! nl2br(e($productsts->description)) !!}
                                     </p>
 
                                     <div class="price"><ins>$ {{ $productsts->price }}</ins></div>

@@ -72,7 +72,7 @@
                                             value="{{ $product->seller_id }}">
                                     </div>
 
-                                    <p class="products-desc">{{ $product->description }}</p>
+                                    <p class="products-desc">{!! nl2br(e($product->description)) !!}</p>
                                     <form action="{{ route('cart.add') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="seller_id" value="{{ $product->seller_id }}">
