@@ -13,13 +13,13 @@
                     <ul id="accordion-menu">
 
                         <li>
-                            <a href="{{route('client.dashboard')}}" class="dropdown-toggle no-arrow">
+                            <a href="{{route('client.dashboard')}}" class="dropdown-toggle no-arrow {{ Route::is('client.dashboard') ? 'active' : '' }}">
                                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a href="{{route('all.orders')}}" class="dropdown-toggle no-arrow">
+                            <a href="{{route('all.orders')}}" class="dropdown-toggle no-arrow {{ Route::is('all.orders') ? 'active' : '' }}">
                                 <span class="micon bi bi-list"></span><span class="mtext">My Orders</span>
                             </a>
                         </li>
@@ -45,7 +45,7 @@
                         </li>
 
                         <li>
-                            <a href="{{route('client.zoom.list')}}" class="dropdown-toggle no-arrow">
+                            <a href="{{route('client.zoom.list')}}" class="dropdown-toggle no-arrow {{ Route::is('client.zoom.list') ? 'active' : '' }}">
                                 <span class="micon bi bi-chat-dots"></span><span class="mtext">Zoom Meeting Request</span>
                             </a>
                         </li>

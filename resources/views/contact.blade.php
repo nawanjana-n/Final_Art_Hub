@@ -27,13 +27,13 @@
         <!--== Page Content Wrapper End ==-->
         <!-- resources/views/contact.blade.php -->
         <div id="page-content-wrapper" class="p-9">
-            <div class="container">
+            <div class="container ">
                 <div class="row">
                     <!-- Contact Page Content Start -->
                     <div class="col-lg-12">
                         <!-- Contact Method Start -->
-                        <div class="contact-method-wrap">
-                            <div class="row">
+                        <div class="contact-method-wrap align-items-center">
+                            <div class="row justify-content-center">
                                 <!-- Single Method Start -->
                                 <div class="col-lg-3 col-sm-6 text-center">
                                     <div class="contact-method-item">
@@ -60,7 +60,7 @@
                                 <!-- Single Method End -->
 
                                 <!-- Single Method Start -->
-                                <div class="col-lg-3 col-sm-6 text-center">
+                                {{-- <div class="col-lg-3 col-sm-6 text-center">
                                     <div class="contact-method-item">
                                         <span class="method-icon"><i class="fa fa-envelope-open-o"></i></span>
                                         <div class="method-info">
@@ -68,7 +68,7 @@
                                             <p>+94 766189896 </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!-- Single Method End -->
 
                                 <!-- Single Method Start -->
