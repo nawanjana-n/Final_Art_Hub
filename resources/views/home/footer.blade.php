@@ -7,13 +7,7 @@
                     <div class="col-lg-3 col-md-6">
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
-                            <figure class="callto-thumb">
-                                <img src="../assets2/img/air-plane.png" alt="WorldWide Shipping"/>
-                            </figure>
-                            <div class="callto-info">
-                                <h2>Shipping Worldwide</h2>
-                                <p style="font-size: 1.1rem;">Beware Of Expensive Shipping.</p>
-                            </div>
+
                         </div>
                         <!-- Single Call-to Action End -->
                     </div>
@@ -21,13 +15,8 @@
                     <div class="col-lg-3 col-md-6">
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
-                            <figure class="callto-thumb">
-                                <img src="../assets2/img/support.png" alt="Support"/>
-                            </figure>
-                            <div class="callto-info">
-                                <h2>24/7 CUSTOMER SERVICE</h2>
-                                <p style="font-size: 1.1rem;">Call us 24/7</p>
-                            </div>
+
+
                         </div>
                         <!-- Single Call-to Action End -->
                     </div>
@@ -35,13 +24,8 @@
                     <div class="col-lg-3 col-md-6">
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
-                            <figure class="callto-thumb">
-                                <img src="../assets2/img/money-back.png" alt="Money Back"/>
-                            </figure>
-                            <div class="callto-info">
-                                <h2>MONEY BACK Guarantee!</h2>
-                                <p style="font-size: 1.1rem;">Send within 30 days</p>
-                            </div>
+
+
                         </div>
                         <!-- Single Call-to Action End -->
                     </div>
@@ -49,13 +33,8 @@
                     <div class="col-lg-3 col-md-6">
                         <!-- Single Call-to Action Start -->
                         <div class="single-callto-action d-flex">
-                            <figure class="callto-thumb">
-                                <img src="../assets2/img/cog.png" alt="Guide"/>
-                            </figure>
-                            <div class="callto-info">
-                                <h2>SHOPPING GUIDE</h2>
-                                <p style="font-size: 1.1rem;">Follow our guidelines</p>
-                            </div>
+                            
+
                         </div>
                         <!-- Single Call-to Action End -->
                     </div>
@@ -147,7 +126,7 @@
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <div class="copyright-text">
-                                <p><a target="_blank" href="https://github.com/nawanjana-n/Final_Art_Hub" style="color: rgb(0, 0, 0); font-weight: bold; font-style:normal; font-family: Open-sans">Developed by Nuwandi Nawanjana</a></p>
+                                <p><a target="_blank" href="https://github.com/nawanjana-n/Final_Art_Hub" style="color: rgb(0, 0, 0); font-weight: bold; font-style:normal; font-family: Open-sans">Art Trade Hub Developed by Nuwandi Nawanjana</a></p>
                             </div>
                         </div>
                     </div>

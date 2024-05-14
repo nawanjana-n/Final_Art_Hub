@@ -39,8 +39,8 @@
                                     <div class="contact-method-item">
                                         <span class="method-icon"><i class="fa fa-map-marker"></i></span>
                                         <div class="method-info">
-                                            <h3>Street Address</h3>
-                                            <p>Address : No 40 Baria Sreet 133/2 <br> NewYork City, NY, United States.</p>
+                                            <h3> Address</h3>
+                                            <p>Address : 217 <br>Puwakwatte Road.Meegoda</p>
                                         </div>
                                     </div>
                                 </div>
@@ -52,8 +52,8 @@
                                         <span class="method-icon"><i class="fa fa-phone"></i></span>
                                         <div class="method-info">
                                             <h3>Phone Number</h3>
-                                            <a href="tel:0(1234)56789012">0(1234) 567 89012</a>
-                                            <a href="tel:0(1234)56789012">0(1323) 466 89012</a>
+                                            <a href="tel:(+94) 766189896">(+94) 766189896</a>
+                                            <a href="tel:(+94) 767432694">(+94) 767432694</a>
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                         <span class="method-icon"><i class="fa fa-envelope-open-o"></i></span>
                                         <div class="method-info">
                                             <h3>Number Fax</h3>
-                                            <p>+1 323 555 1234 <br> +1 267 555 12342</p>
+                                            <p>+94 766189896 </p>
                                         </div>
                                     </div>
                                 </div>
@@ -77,8 +77,8 @@
                                         <span class="method-icon"><i class="fa fa-envelope"></i></span>
                                         <div class="method-info">
                                             <h3>Email Address</h3>
-                                            <a href="mailto:your@email.here">your@email.here</a>
-                                            <a href="mailto:your@email.here">your@email.here</a>
+                                            <a href="mailto:your@email.here">arttrade@gmail.com</a>
+
                                         </div>
                                     </div>
                                 </div>

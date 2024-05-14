@@ -63,7 +63,7 @@
                                 fostering a thriving online community of creativity, collaboration, and cultural exchange.
                             </p>
 
-                            <a href="#" class="btn btn-long-arrow">Learn More</a>
+
 
 
                             <h4 class="vertical-text">WHO WE ARE?</h4>
@@ -84,7 +84,7 @@
                 <div class="col-lg-12 text-center">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h2>All Collection Products</h2>
+                        <h2>All Collection</h2>
                         <p>All Category on Arts.</p>
                     </div>
                     <!-- Section Title End -->
@@ -148,7 +148,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -183,7 +184,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -215,7 +217,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -250,7 +253,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -283,7 +287,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -316,7 +321,8 @@
                                                         </h2>
 
                                                         <span class="price">$ {{ $product->price }}</span>
-                                                        <a href="{{ route('product', ['id' => $product->id]) }}" class="btn btn-add-to-cart">View</a>
+                                                        <a href="{{ route('product', ['id' => $product->id]) }}"
+                                                            class="btn btn-add-to-cart">View</a>
                                                         <span class="product-bedge">New</span>
                                                     </div>
 
@@ -436,7 +442,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h2>What People Say</h2>
-                            <p>Testimonials</p>
+                            <p>About Our Arts</p>
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -447,10 +453,7 @@
                         <div class="testimonial-content-wrap">
                             <div id="testimonialCarousel" class="owl-carousel">
                                 <div class="single-testimonial-item">
-                                    <p>These guys have been absolutely outstanding. When I needed them they came through in
-                                        a big way! I know that if you buy this theme, you'll get the one thing we all look
-                                        for when we buy on Themeforest, and that's real support for the craziest of
-                                        requests!</p>
+                                    <p>These arts have been absolutely outstanding.</p>
 
 
                                 </div>
@@ -467,96 +470,7 @@
     </section>
 
 
-    <!--== Testimonial Area End ==-->
-
-    <!--== Blog Area Start ==-->
-    {{-- <section id="blog-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h2>From Our Sale</h2>
-                        <p>Share your latest arts here.</p>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="blog-content-wrap">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Sale  Item 1 Start -->
-                        <div class="single-blog-wrap">
-                            <figure class="blog-thumb">
-                                <a href="#"><img src="assets2/img/sale-1.jpg" alt="blog"
-                                        class="img-fluid" /></a>
-                                <figcaption class="blog-icon">
-                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
-                                </figcaption>
-                            </figure>
-
-                            <div class="blog-details">
-                                <h3><a href="#">digital art of a girl</a></h3>
-                                <span class="post-date">20/January/2024</span>
-                                <p>The girl is portrayed with delicate features and flowing hair, surrounded by swirling
-                                    patterns and glowing lights that create a dreamlike atmosphere. .</p>
-                                <a href="#" class="btn-long-arrow">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Sale Item 1 End -->
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <!-- Sale  Item  2 Start -->
-                        <div class="single-blog-wrap">
-                            <figure class="blog-thumb">
-                                <a href="#"><img src="assets2/img/sale-2.jpg" alt="blog"
-                                        class="img-fluid" /></a>
-                                <figcaption class="blog-icon">
-                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
-                                </figcaption>
-                            </figure>
-
-                            <div class="blog-details">
-                                <h3><a href="#">pencil art of a young woman</a></h3>
-                                <span class="post-date">20/January/2024</span>
-                                <p>The pencil art portrays a young woman with striking realism and emotion. Through the
-                                    skilled use of shading and delicate lines, the artist captures the intricate details of
-                                    the woman's features, from the curve of her lips to the intensity of her gaze.</p>
-                                <a href="#" class="btn-long-arrow">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Sale Item 2 End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-wrap">
-                            <figure class="blog-thumb">
-                                <a href="#"><img src="assets2/img/sale-3.jpg" alt="blog"
-                                        class="img-fluid" /></a>
-                                <figcaption class="blog-icon">
-                                    <a href="#"><i class="fa fa-file-image-o"></i></a>
-                                </figcaption>
-                            </figure>
-
-                            <div class="blog-details">
-                                <h3><a href="#">a drawing of a sunset</a></h3>
-                                <span class="post-date">20/January/2024</span>
-                                <p>The drawing depicts a serene sunset scene with captivating beauty and tranquility. The
-                                    artist skillfully captures the warm hues of the setting sun as it dips below the
-                                    horizon, casting a golden glow across the sky..</p>
-                                <a href="#" class="btn-long-arrow">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Single Blog Item End -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--== Blog Area End ==-->
+    
 
 
 @endsection
