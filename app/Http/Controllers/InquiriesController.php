@@ -31,25 +31,7 @@ class InquiriesController extends Controller
 
         return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
 
-    } //End Method
-
-    // public function updateStatus(Request $request)
-    // {
-    //     // Validate the request data
-    //     $request->validate([
-    //         'id' => 'required|exists:inquiries,id',
-    //     ]);
-
-    //     // Find the inquiry by ID
-    //     $inquiry = InquiriesModel::findOrFail($request->id);
-
-    //     // Update the status field
-    //     $inquiry->status = 'old';
-    //     $inquiry->save();
-
-    //     // Redirect back or return a response as needed
-    //     return redirect()->back()->with('success', 'Status updated successfully');
-    // }
+    }
 
     public function updateStatus($id)
     {

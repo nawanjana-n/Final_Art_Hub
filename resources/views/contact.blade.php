@@ -57,19 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Single Method End -->
 
-                                <!-- Single Method Start -->
-                                {{-- <div class="col-lg-3 col-sm-6 text-center">
-                                    <div class="contact-method-item">
-                                        <span class="method-icon"><i class="fa fa-envelope-open-o"></i></span>
-                                        <div class="method-info">
-                                            <h3>Number Fax</h3>
-                                            <p>+94 766189896 </p>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                <!-- Single Method End -->
 
                                 <!-- Single Method Start -->
                                 <div class="col-lg-3 col-sm-6 text-center">

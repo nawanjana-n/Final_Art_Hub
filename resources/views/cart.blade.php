@@ -44,24 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($carts as $item)
-                                        <tr>
-                                            <td class="pro-thumbnail"><a><img class="img-fluid"
-                                                        src="{{ !empty($item->image) ? url('upload/product_main_image/' . $item->image) : url('upload/no_image.jpg') }}"
-                                                        alt="Product" /></a></td>
-                                            <td class="pro-title"><a>{{ $item->p_name }}</a></td>
-                                            <td class="pro-price"><span>${{ $item->price }}</span></td>
-                                            <td class="pro-quantity">
-                                                <div class="pro-qty"><input type="text" value="{{ $item->quantity }}"
-                                                        disabled></div>
-                                            </td>
-                                            <td class="pro-subtotal"><span>${{ $item->total_price }} </span></td>
-                                            <td style="display: none"><input type="hidden" value="{{ $item->id }}">
-                                            </td>
-                                            <td class="pro-remove"><a href="{{ route('delete.cart', $item->id) }}"><i
-                                                        class="fa fa-trash-o"></i></a></td>
-                                        </tr>
-                                    @endforeach --}}
+
                                     @if ($carts->isEmpty())
                                         <tr>
                                             <td colspan="7">Your cart is empty. Shop & enjoy!</td>
@@ -96,7 +79,6 @@
 
                 <div class="row">
                     <div class="col-lg-6 ml-auto">
-                        <!-- Cart Calculation Area -->
                         <div class="cart-calculator-wrapper">
                             <h3>Cart Totals</h3>
                             <div class="cart-calculate-items">
@@ -118,10 +100,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Cart Page Content End -->
+
             </div>
         </div>
-        <!--== Page Content Wrapper End ==-->
+
 
 
     </body>

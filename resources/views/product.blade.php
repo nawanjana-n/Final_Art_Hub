@@ -131,20 +131,7 @@
     <!--=== Active Js ===-->
     <script src="{{ asset('../assets2/js/active.js') }}"></script>
 
-    {{-- <script>
-        // Function to calculate total price
-        function calculateTotal() {
-            // Get the price and quantity values
-            var price = parseFloat(document.getElementById('price').value);
-            var quantity = parseInt(document.getElementById('qty').value);
-
-            // Calculate the total price
-            var totalPrice = price * quantity;
-
-            // Display the total price
-            document.getElementById('total_price').value = totalPrice.toFixed(2); // Assuming 2 decimal places
-        }
-    </script> --}}
+   
 
     <script>
         // Function to calculate total price and shipping fee

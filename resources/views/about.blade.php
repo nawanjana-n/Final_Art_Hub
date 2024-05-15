@@ -49,8 +49,6 @@
                                 </p>
 
                                
-
-
                                 <h4 class="vertical-text">WHO WE ARE?</h4>
                             </div>
                         </div>

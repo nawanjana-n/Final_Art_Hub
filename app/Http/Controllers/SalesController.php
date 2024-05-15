@@ -156,7 +156,7 @@ class SalesController extends Controller
         $zoomStatus = SalesModel::find($id);
 
         if ($zoomStatus) {
-            
+
             $zoomStatus->update(['zoom_status' => 'need']);
             return redirect()->back()->with('success', 'Your Messege Send');
         }

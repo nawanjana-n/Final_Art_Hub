@@ -18,13 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::post('/contact', function (Request $request) {
-//     // Process the form submission here
-//     // For example, you can send an email, store data in the database, etc.
 
-//     // After processing, you can redirect the user back to the contact page
-//     return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
-// })->name('contact.submit');
 
 Route::get('/', [CategoryTypeController::class, 'index']);
 
@@ -56,12 +50,7 @@ Route::put('/inquiry/{id}/update-status', [InquiriesController::class, 'updateSt
 
 Route::get('/product/{id}', [ProductsController::class, 'ProductsViews'])->name('product');
 
-// Route::controller(ProductsController::class)->group(function () {
 
-//     Route::get('/product-view', 'ProductViews')->name('product.view');
-
-
-// });
 
 
 
@@ -204,7 +193,7 @@ Route::middleware(['auth', 'role:client'])->group(function () {
         Route::get('/delete/cart/{id}', 'DeleteCart')->name('delete.cart');
 
         Route::get('/checkout', 'CheckoutView')->name('checkout');
-        Route::post('/cart/update','CheckoutAdd')->name('checkout.update');
+        Route::post('/cart/update', 'CheckoutAdd')->name('checkout.update');
 
 
         Route::get('/client/zoom/list', 'ZoomList')->name('client.zoom.list');
