@@ -89,48 +89,6 @@
                                 </div>
 
 
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Password</label>
-                                    <div class="col-sm-12 col-md-10">
-
-
-                                        <input class="form-control @error('password') is-invalid @enderror"
-                                            type="text" name="password"
-                                            placeholder="Enter Password">
-                                    </div>
-                                    @error('password')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div> --}}
-
-
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Status</label>
-                                    <div class="col-sm-12 col-md-10">
-
-
-                                        <input class="form-control @error('status') is-invalid @enderror"
-                                            type="text" name="status"
-                                            placeholder="Status">
-                                    </div>
-                                    @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div> --}}
-
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-12 col-md-2 col-form-label">Role Name</label>
-                                    <div class="col-sm-12 col-md-10">
-                                        <select class="custom-select col-12">
-                                            <option selected="">Choose...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-
-                                </div> --}}
-
 
 
 

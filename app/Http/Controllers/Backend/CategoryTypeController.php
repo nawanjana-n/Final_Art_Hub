@@ -26,8 +26,7 @@ class CategoryTypeController extends Controller
         $categories = CategoryType::all();
 
         $products = ProductsModel::orderBy('created_at', 'desc')
-            ->take(10)
-            ->get();
+           ->get();
 
         return view('welcome', compact('categories', 'products'));
 

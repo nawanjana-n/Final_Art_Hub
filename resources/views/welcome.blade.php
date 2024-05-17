@@ -51,7 +51,7 @@
                 <div class="col-lg-6 m-auto">
                     <!-- About Text Area Start -->
                     <div class="about-content-wrap ml-0 ml-lg-5 mt-5 mt-lg-0">
-                        <h2>About Us</h2>
+                        <a href="{{ route('about') }}" class="btn-long-arrow">About Us</a>
                         <h3>WE ARE VISIONARY</h3>
                         <div class="about-text">
                             <p>To revolutionize the art trade industry by creating a vibrant and inclusive online platform
